@@ -28,7 +28,7 @@ cd ~
 echo "alias blue_hydra='sudo ~/blue_hydra/bin/blue_hydra'" > .bash_aliases
 echo
 
-echo "**** READ INSTRUCTION BELOW CAREFULLY ****"
+echo "**** READ INSTRUCTIONS BELOW CAREFULLY ****"
 echo "You will need to assign a password to this user."
 echo "Your username is: live"
 echo "Please follow the steps below to change the password."
