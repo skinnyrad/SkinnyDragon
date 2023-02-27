@@ -29,12 +29,26 @@ echo "alias blue_hydra='sudo ~/blue_hydra/bin/blue_hydra'" > .bash_aliases
 echo
 
 echo "**** READ INSTRUCTIONS BELOW CAREFULLY ****"
-echo "You will need to assign a password to this user."
+echo "You will need to assign a password to this user. Everytime this computer reboots, the password will be erased."
 echo "Your username is: live"
 echo "Please follow the steps below to change the password."
 echo "When prompted for the Current Password, just press Enter."
 echo
 
 passwd
+
+echo "Now that you have entered a password, it will be valid for this session."
+echo "To give yourself a password in the future, pop open the terminal and type: passwd"
+echo "You will need a password if you wish to log in to this machine remotely using ssh."
+read key
+echo "Press Enter to continue"
+
+echo
+echo "**** Desktop Download for Class Background ****"
+echo
+wget https://skinnyrd.com/wp-content/uploads/2023/02/Screensaver.png -P ~/Pictures/
+cd ~/Pictures/
+mv Screensaver.png wallpaper.png
+pcmanfm-qt -w wallpaper.png
 
 echo "**** Please Reboot ****"
