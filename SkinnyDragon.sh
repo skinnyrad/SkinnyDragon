@@ -31,7 +31,7 @@ echo
 echo
 echo "** PLEASE READ THIS NOTICE**"
 echo "Everytime you boot DragonOS for now on, you will be prompted to make a new password."
-ehco "During this process, it always prompt you for the Current Password"
+echo "During this process, it always prompt you for the Current Password"
 echo "When prompted for the Current Password, it will always be blank."
 echo "Simply press ENTER at this prompt and it will then ask you for the new password."
 echo
