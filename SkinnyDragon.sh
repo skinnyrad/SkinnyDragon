@@ -29,10 +29,10 @@ echo "alias blue_hydra='sudo /opt/bluetooth/blue_hydra/bin/blue_hydra'" > .bash_
 
 echo
 echo "** PLEASE READ THIS NOTICE**"
-echo "Everytime you boot DragonOS for now on, you will be prompted to make a new password."
-echo "During this process, it always prompt you for the Current Password"
-echo "When prompted for the Current Password, it will always be blank."
-echo "Simply press ENTER at this prompt and it will then ask you for the new password."
+echo "When DragonOS boots, you will be prompted to make a new user password."
+echo "During this process, it always prompts for the Current Password."
+echo "When prompted for the Current Password, press ENTER because the password does not exist."
+echo "Any new password created will be erased each time DragonOS shuts down.
 echo
 echo "Press Enter to continue"
 read key
