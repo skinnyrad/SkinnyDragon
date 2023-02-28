@@ -42,7 +42,8 @@ echo "**** Creating Password Prompt on Login ****"
 cd ~
 mkdir myScripts
 cd myScripts
-echo 'echo "*** Create a Password for This Session ***"' > passwordchange.sh
+echo '#!/bin/bash' > passwordchange.sh
+echo 'echo "*** Create a Password for This Session ***"' >> passwordchange.sh
 echo 'echo "At the Current Password prompt, press ENTER."' >> passwordchange.sh
 echo "passwd" >> passwordchange.sh
 chmod 744 passwordchange.sh
