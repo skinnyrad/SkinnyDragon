@@ -28,27 +28,22 @@ cd ~
 echo "alias blue_hydra='sudo ~/blue_hydra/bin/blue_hydra'" > .bash_aliases
 echo
 
-echo "**** READ INSTRUCTIONS BELOW CAREFULLY ****"
-echo "You will need to assign a password to this user. Everytime this computer reboots, the password will be erased."
-echo "Your username is: live"
-echo "Please follow the steps below to change the password."
-echo "When prompted for the Current Password, just press Enter."
 echo
-
-passwd
-
-echo "Now that you have entered a password, it will be valid for this session."
-echo "To give yourself a password in the future, pop open the terminal and type: passwd"
-echo "You will need a password if you wish to log in to this machine remotely using ssh."
-read key
+echo "** PLEASE READ THIS NOTICE**"
+echo "Everytime you boot DragonOS for now on, you will be prompted to make a new password."
+ehco "During this process, it always prompt you for the Current Password"
+echo "When prompted for the Current Password, it will always be blank."
+echo "Simply press ENTER at this prompt and it will then ask you for the new password."
+echo
 echo "Press Enter to continue"
+read key
 
-echo "**** Creating Password Prompt on Boot ****"
+echo "**** Creating Password Prompt on Login ****"
 cd ~
 mkdir myScripts
 cd myScripts
 echo 'echo "*** Create a Password for This Session ***"' > passwordchange.sh
-echo 'echo "At the Current Password prompt, just press ENTER."' >> passwordchange.sh
+echo 'echo "At the Current Password prompt, press ENTER."' >> passwordchange.sh
 echo "passwd" >> passwordchange.sh
 chmod 744 passwordchange.sh
 
@@ -56,10 +51,11 @@ cd ~/.config/
 mkdir autostart
 cd autostart
 echo "[Desktop Entry]" > password.desktop
-echo "Name=ChangePassword" >> password.desktop
+echo "Type=Application" >> password.desktop
 echo "Exec=/home/live/myScripts/passwordchange.sh" >> password.desktop
 echo "Terminal=true" >> password.desktop
-echo "Type=Applications" >> password.desktop
+echo "StartupNotify=true" >> password.desktop
+echo "Name=Password" >> password.desktop
 chmod 744 password.desktop
 
 echo
@@ -68,6 +64,10 @@ echo
 wget https://skinnyrd.com/wp-content/uploads/2023/02/Screensaver.png -P ~/Pictures/
 cd ~/Pictures/
 mv Screensaver.png wallpaper.png
-pcmanfm-qt -w wallpaper.png
+cd ~/.config/autostart
+echo "[Desktop Entry]" > wallpaper.desktop
+echo "Type=Application" >> wallpaper.desktop
+echo "Exec=pcmanfm-qt --set-wallpaper=/home/live/Pictures/wallpaper.png --wallpaper-mode=stretch" >> wallpaper.desktop
+echo "Name=Wallpaper" >> wallpaper.desktop
 
 echo "**** Please Reboot ****"
