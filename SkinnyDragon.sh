@@ -32,7 +32,7 @@ echo "** PLEASE READ THIS NOTICE**"
 echo "When DragonOS boots, you will be prompted to make a new user password."
 echo "During this process, it always prompts for the Current Password."
 echo "When prompted for the Current Password, press ENTER because the password does not exist."
-echo "Any new password created will be erased each time DragonOS shuts down.
+echo "Any new password created will be erased each time DragonOS shuts down."
 echo
 echo "Press Enter to continue"
 read key
