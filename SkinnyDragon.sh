@@ -43,6 +43,25 @@ echo "You will need a password if you wish to log in to this machine remotely us
 read key
 echo "Press Enter to continue"
 
+echo "**** Creating Password Prompt on Boot ****"
+cd ~
+mkdir myScripts
+cd myScripts
+echo 'echo "*** Create a Password for This Session ***"' > passwordchange.sh
+echo 'echo "At the Current Password prompt, just press ENTER."' >> passwordchange.sh
+echo "passwd" >> passwordchange.sh
+chmod 744 passwordchange.sh
+
+cd ~/.config/
+mkdir autostart
+cd autostart
+echo "[Desktop Entry]" > password.desktop
+echo "Name=ChangePassword" >> password.desktop
+echo "Exec=/home/live/myScripts/passwordchange.sh" >> password.desktop
+echo "Terminal=true" >> password.desktop
+echo "Type=Applications" >> password.desktop
+chmod 744 password.desktop
+
 echo
 echo "**** Desktop Download for Class Background ****"
 echo
