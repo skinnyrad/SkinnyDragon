@@ -25,8 +25,7 @@ echo
 echo "****Creating a Permanent alias for Blue_Hydra****"
 echo
 cd ~
-echo "alias blue_hydra='sudo ~/blue_hydra/bin/blue_hydra'" > .bash_aliases
-echo
+echo "alias blue_hydra='sudo /opt/bluetooth/blue_hydra/bin/blue_hydra'" > .bash_aliases
 
 echo
 echo "** PLEASE READ THIS NOTICE**"
@@ -71,4 +70,6 @@ echo "Type=Application" >> wallpaper.desktop
 echo "Exec=pcmanfm-qt --set-wallpaper=/home/live/Pictures/wallpaper.png --wallpaper-mode=stretch" >> wallpaper.desktop
 echo "Name=Wallpaper" >> wallpaper.desktop
 
-echo "**** Please reboot by typeing reboot and pressing ENTER ****"
+echo
+echo "**** Please reboot by typing reboot and pressing ENTER ****"
+echo
