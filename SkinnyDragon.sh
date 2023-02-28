@@ -28,7 +28,7 @@ cd ~
 echo "alias blue_hydra='sudo /opt/bluetooth/blue_hydra/bin/blue_hydra'" > .bash_aliases
 
 echo
-echo "** PLEASE READ THIS NOTICE**"
+echo "** PLEASE READ THIS NOTICE **"
 echo "When DragonOS boots, you will be prompted to make a new user password."
 echo "During this process, it always prompts for the Current Password."
 echo "When prompted for the Current Password, press ENTER because the password does not exist."
