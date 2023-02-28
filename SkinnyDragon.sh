@@ -71,4 +71,4 @@ echo "Type=Application" >> wallpaper.desktop
 echo "Exec=pcmanfm-qt --set-wallpaper=/home/live/Pictures/wallpaper.png --wallpaper-mode=stretch" >> wallpaper.desktop
 echo "Name=Wallpaper" >> wallpaper.desktop
 
-echo "**** Please Reboot ****"
+echo "**** Please reboot by typeing reboot and pressing ENTER ****"
