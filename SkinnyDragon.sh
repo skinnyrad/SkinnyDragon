@@ -19,13 +19,18 @@ read key
 
 sudo apt-get update
 sudo apt-get -y install bluez-tools openssh-server
-
 echo
 
-echo "****Creating a Permanent alias for Blue_Hydra****"
-echo
+echo "**** Installing Blue Sonar ****"
 cd ~
-echo "alias blue_hydra='sudo /opt/bluetooth/blue_hydra/bin/blue_hydra'" > .bash_aliases
+git clone https://github.com/ZeroChaos-/blue_sonar
+echo
+
+echo "**** Creating Permanent aliases for Blue_Hydra & Blue Sonar ****"
+cd ~
+echo "alias blue_hydra='sudo /opt/bluetooth/blue_hydra/bin/blue_hydra'" >> .bash_aliases
+echo "alias blue_sonar='sudo ~/blue_sonar/blue_sonar'" >> .bash_aliases
+echo
 
 echo
 echo "** PLEASE READ THIS NOTICE **"
