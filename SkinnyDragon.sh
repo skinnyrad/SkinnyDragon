@@ -104,6 +104,7 @@ echo "[Desktop Entry]" > wallpaper.desktop
 echo "Type=Application" >> wallpaper.desktop
 echo "Exec=pcmanfm-qt --set-wallpaper=/home/live/Pictures/DragonWallpaper1080$a.png --wallpaper-mode=center" >> wallpaper.desktop
 echo "Name=Wallpaper" >> wallpaper.desktop
+chmod 744 wallpaper.desktop
 
 echo
 echo "**** Please reboot by typing reboot and pressing ENTER ****"
