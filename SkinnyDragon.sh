@@ -107,5 +107,12 @@ echo "Name=Wallpaper" >> wallpaper.desktop
 chmod 744 wallpaper.desktop
 
 echo
-echo "**** Please reboot by typing reboot and pressing ENTER ****"
+echo "**** Erasing qterminal Config Files for Clean Reboot ****"
 echo
+rm -rf ~/.config/qterminal.org/
+
+echo
+echo "**** A Reboot Will Occur in 5 Seconds ****"
+echo
+sleep 5
+reboot
