@@ -77,7 +77,7 @@ Choose your destiny:
 3) The Dark Spectre
 4) The Drifting Cloud
 
-Choose an option:  "
+Choose a number and press ENTER:  "
     read -r ans
     case $ans in
     1)
