@@ -28,7 +28,7 @@ echo
 
 echo "**** Creating Permanent aliases for Blue_Hydra & Blue Sonar ****"
 cd ~
-echo "alias blue_hydra='sudo /opt/bluetooth/blue_hydra/bin/blue_hydra'" >> .bash_aliases
+echo "alias blue_hydra='sudo /opt/bluetooth/blue_hydra/bin/blue_hydra'" > .bash_aliases
 echo "alias blue_sonar='sudo ~/blue_sonar/blue_sonar'" >> .bash_aliases
 echo
 
@@ -66,13 +66,43 @@ chmod 744 password.desktop
 echo
 echo "**** Desktop Download for Class Background ****"
 echo
-wget https://skinnyrd.com/wp-content/uploads/2023/02/Screensaver.png -P ~/Pictures/
-cd ~/Pictures/
-mv Screensaver.png wallpaper.png
+wget https://skinnyrd.com/wp-content/uploads/2023/03/DragonWallpaper1080turq.png -P ~/Pictures/
+wget https://skinnyrd.com/wp-content/uploads/2023/03/DragonWallpaper1080red.png -P ~/Pictures/
+wget https://skinnyrd.com/wp-content/uploads/2023/03/DragonWallpaper1080skeleton.png -P ~/Pictures/
+wget https://skinnyrd.com/wp-content/uploads/2023/03/DragonWallpaper1080grey.png -P ~/Pictures/
+echo -ne "
+Choose your destiny:
+1) The Flowing Stream
+2) The Endless Sun
+3) The Dark Spectre
+4) The Drifting Cloud
+
+Choose an option:  "
+    read -r ans
+    case $ans in
+    1)
+        a='turg'
+        ;;
+    2)  
+        a='red'
+        ;;
+    3)
+        a='skeleton'
+        ;;
+    4)  
+        a='grey'
+        ;;
+    *)  
+        echo
+        echo "Your destiny has been chosen for you."
+        echo
+        a='turq'
+        ;;
+    esac
 cd ~/.config/autostart
 echo "[Desktop Entry]" > wallpaper.desktop
 echo "Type=Application" >> wallpaper.desktop
-echo "Exec=pcmanfm-qt --set-wallpaper=/home/live/Pictures/wallpaper.png --wallpaper-mode=stretch" >> wallpaper.desktop
+echo "Exec=pcmanfm-qt --set-wallpaper=/home/live/Pictures/DragonWallpaper1080$a.png --wallpaper-mode=center" >> wallpaper.desktop
 echo "Name=Wallpaper" >> wallpaper.desktop
 
 echo
