@@ -81,7 +81,7 @@ Choose a number and press ENTER:  "
     read -r ans
     case $ans in
     1)
-        a='turg'
+        a='turq'
         ;;
     2)  
         a='red'
