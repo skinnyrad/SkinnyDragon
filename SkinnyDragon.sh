@@ -99,15 +99,13 @@ Choose a number and press ENTER:  "
         a='turq'
         ;;
     esac
-#cd ~/.config/autostart
-#echo "[Desktop Entry]" > wallpaper.desktop
-#echo "Type=Application" >> wallpaper.desktop
-#echo "Exec=pcmanfm-qt --set-wallpaper=/home/live/Pictures/DragonWallpaper1080$a.png --wallpaper-mode=center" >> wallpaper.desktop
-#echo "Name=Wallpaper" >> wallpaper.desktop
-#chmod 744 wallpaper.desktop
-#pcmanfm-qt --set-wallpaper=/home/live/Pictures/DragonWallpaper1080$a.png --wallpaper-mode=center
-rm /usr/share/lubuntu/wallpapers/lubuntu-default-wallpaper.png
-mv ~/Pictures/DragonWallpaper1080$a.png /usr/share/lubuntu/wallpapers/lubuntu-default-wallpaper.png
+cd ~/.config/autostart
+echo "[Desktop Entry]" > wallpaper.desktop
+echo "Type=Application" >> wallpaper.desktop
+echo "Exec=pcmanfm-qt --set-wallpaper=/home/live/Pictures/DragonWallpaper1080$a.png --wallpaper-mode=center" >> wallpaper.desktop
+echo "Name=Wallpaper" >> wallpaper.desktop
+chmod 744 wallpaper.desktop
+pcmanfm-qt --set-wallpaper=/home/live/Pictures/DragonWallpaper1080$a.png --wallpaper-mode=center
 
 echo
 echo "**** Erasing qterminal Config Files for Clean Reboot ****"
