@@ -112,7 +112,9 @@ echo
 rm -rf ~/.config/qterminal.org/
 
 echo
-echo "**** A Reboot Will Occur in 5 Seconds ****"
+echo "**** A Reboot Will Occur in 10 Seconds ****"
 echo
+sleep 5
+echo "5 seconds remaining..."
 sleep 5
 reboot
