@@ -50,7 +50,7 @@ echo '#!/bin/bash' > passwordchange.sh
 echo 'echo "*** Create a Password for This Session ***"' >> passwordchange.sh
 echo 'echo "At Current Password prompt, JUST PRESS ENTER."' >> passwordchange.sh
 echo 'echo' >> passwordchange.sh
-echo "passwd' >> passwordchange.sh
+echo 'passwd' >> passwordchange.sh
 chmod 744 passwordchange.sh
 
 echo "**** Creating Password Prompt AutoLaunch at Login ****"
