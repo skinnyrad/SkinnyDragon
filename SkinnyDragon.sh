@@ -52,16 +52,16 @@ echo 'echo "At the Current Password prompt, press ENTER."' >> passwordchange.sh
 echo "passwd" >> passwordchange.sh
 chmod 744 passwordchange.sh
 
-cd ~/.config/
-mkdir autostart
-cd autostart
-echo "[Desktop Entry]" > password.desktop
-echo "Type=Application" >> password.desktop
-echo "Exec=/home/live/myScripts/passwordchange.sh" >> password.desktop
-echo "Terminal=true" >> password.desktop
-echo "StartupNotify=true" >> password.desktop
-echo "Name=Password" >> password.desktop
-chmod 744 password.desktop
+#cd ~/.config/
+#mkdir autostart
+#cd autostart
+#echo "[Desktop Entry]" > password.desktop
+#echo "Type=Application" >> password.desktop
+#echo "Exec=/home/live/myScripts/passwordchange.sh" >> password.desktop
+#echo "Terminal=true" >> password.desktop
+#echo "StartupNotify=true" >> password.desktop
+#echo "Name=Password" >> password.desktop
+#chmod 744 password.desktop
 
 echo
 echo "**** Desktop Download for Class Background ****"
@@ -99,12 +99,12 @@ Choose a number and press ENTER:  "
         a='turq'
         ;;
     esac
-cd ~/.config/autostart
-echo "[Desktop Entry]" > wallpaper.desktop
-echo "Type=Application" >> wallpaper.desktop
-echo "Exec=pcmanfm-qt --set-wallpaper=/home/live/Pictures/DragonWallpaper1080$a.png --wallpaper-mode=center" >> wallpaper.desktop
-echo "Name=Wallpaper" >> wallpaper.desktop
-chmod 744 wallpaper.desktop
+#cd ~/.config/autostart
+#echo "[Desktop Entry]" > wallpaper.desktop
+#echo "Type=Application" >> wallpaper.desktop
+#echo "Exec=pcmanfm-qt --set-wallpaper=/home/live/Pictures/DragonWallpaper1080$a.png --wallpaper-mode=center" >> wallpaper.desktop
+#echo "Name=Wallpaper" >> wallpaper.desktop
+#chmod 744 wallpaper.desktop
 pcmanfm-qt --set-wallpaper=/home/live/Pictures/DragonWallpaper1080$a.png --wallpaper-mode=center
 
 echo
