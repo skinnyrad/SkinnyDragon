@@ -16,7 +16,6 @@ cd SkinnyDragon
 ## Software Installed
 - bluez-tools 
 - openssh-server
-- [blue_hydra](https://github.com/ZeroChaos-/blue_hydra)
 - [blue_sonar](https://github.com/ZeroChaos-/blue_sonar)
 
 ## Aliases
