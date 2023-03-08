@@ -42,26 +42,29 @@ echo
 echo "Press Enter to continue"
 read key
 
-echo "**** Creating Password Prompt on Login ****"
+echo "**** Creating Password Prompt Script ****"
 cd ~
 mkdir myScripts
 cd myScripts
 echo '#!/bin/bash' > passwordchange.sh
 echo 'echo "*** Create a Password for This Session ***"' >> passwordchange.sh
-echo 'echo "At the Current Password prompt, press ENTER."' >> passwordchange.sh
-echo "passwd" >> passwordchange.sh
+echo 'echo "At Current Password prompt, JUST PRESS ENTER."' >> passwordchange.sh
+echo 'echo' >> passwordchange.sh
+echo "passwd' >> passwordchange.sh
 chmod 744 passwordchange.sh
 
-#cd ~/.config/
-#mkdir autostart
-#cd autostart
-#echo "[Desktop Entry]" > password.desktop
-#echo "Type=Application" >> password.desktop
-#echo "Exec=/home/live/myScripts/passwordchange.sh" >> password.desktop
-#echo "Terminal=true" >> password.desktop
-#echo "StartupNotify=true" >> password.desktop
-#echo "Name=Password" >> password.desktop
-#chmod 744 password.desktop
+echo "**** Creating Password Prompt AutoLaunch at Login ****"
+cd ~/.config/
+mkdir autostart
+cd autostart
+echo "[Desktop Entry]" > password.desktop
+echo "Type=Application" >> password.desktop
+echo "Exec=/home/live/myScripts/passwordchange.sh" >> password.desktop
+echo "Terminal=true" >> password.desktop
+echo "StartupNotify=true" >> password.desktop
+echo "Name=Password" >> password.desktop
+echo "X-LQXt-Need-Tray=true">> password.desktop
+chmod 744 password.desktop
 
 echo
 echo "**** Desktop Download for Class Background ****"
