@@ -14,9 +14,11 @@ cd SkinnyDragon
 ```
 
 ## Software Installed
-- bluez-tools 
-- openssh-server
 - [blue_sonar](https://github.com/ZeroChaos-/blue_sonar)
+- bluez-tools
+- openssh-server
+- Raspberry Pi Imager 
+
 
 ## Aliases
 Blue Hydra and Blue Sonar have been aliased so that you do not need to use sudo to run. Just type `blue_sonar` or `blue_hydra` and press enter.
