@@ -32,6 +32,11 @@ echo "alias blue_hydra='sudo /opt/bluetooth/blue_hydra/bin/blue_hydra'" > .bash_
 echo "alias blue_sonar='sudo ~/blue_sonar/blue_sonar'" >> .bash_aliases
 echo
 
+echo "**** Download HackRF and Mayhem Firmware ****"
+git clone https://github.com/https://github.com/greatscottgadgets/hackrf ~/Downloads/
+wget https://github.com/eried/portapack-mayhem/releases/download/v1.6.0/mayhem_v1.6.0_FIRMWARE.zip -O ~/Downloads/mayhem_v1.6.0_FIRMWARE.zip
+wget https://github.com/eried/portapack-mayhem/releases/download/v1.6.0/mayhem_v1.6.0_COPY_TO_SDCARD.zip -O ~/Downloads/mayhem_v1.6.0_COPY_TO_SDCARD.zip
+
 echo
 echo "** PLEASE READ THIS NOTICE **"
 echo "When DragonOS boots, you will be prompted to make a new user password."
