@@ -16,7 +16,7 @@ cd SkinnyDragon
 ## Software Installed
 - [blue_sonar](https://github.com/ZeroChaos-/blue_sonar)
 - bluez-tools
-- Mayhem Firmware for HackRF
+- Mayhem Firmware for HackRF (Downloads folder)
 - openssh-server
 - Raspberry Pi Imager 
 
