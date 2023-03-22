@@ -33,7 +33,7 @@ echo "alias blue_sonar='sudo ~/blue_sonar/blue_sonar'" >> .bash_aliases
 echo
 
 echo "**** Download HackRF and Mayhem Firmware ****"
-git clone https://github.com/https://github.com/greatscottgadgets/hackrf ~/Downloads/
+wget https://github.com/greatscottgadgets/hackrf/releases/download/v2023.01.1/hackrf-2023.01.1.zip -O ~/Downloads/hackrf-2023.01.1.zip
 wget https://github.com/eried/portapack-mayhem/releases/download/v1.6.0/mayhem_v1.6.0_FIRMWARE.zip -O ~/Downloads/mayhem_v1.6.0_FIRMWARE.zip
 wget https://github.com/eried/portapack-mayhem/releases/download/v1.6.0/mayhem_v1.6.0_COPY_TO_SDCARD.zip -O ~/Downloads/mayhem_v1.6.0_COPY_TO_SDCARD.zip
 
