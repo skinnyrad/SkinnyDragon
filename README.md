@@ -14,11 +14,13 @@ cd SkinnyDragon
 ```
 
 ## Software Installed
-- [blue_sonar](https://github.com/ZeroChaos-/blue_sonar)
+- [Blue Sonar](https://github.com/ZeroChaos-/blue_sonar)
 - bluez-tools
 - Mayhem Firmware for HackRF (Downloads folder)
 - openssh-server
-- Raspberry Pi Imager 
+- Raspberry Pi Imager
+- [Red Fang](https://gitlab.com/kalilinux/packages/redfang)
+- [UAPfuzz](https://github.com/skinnyrad/uapfuzz)
 
 ## Aliases
 Blue Hydra and Blue Sonar have been aliased so that you do not need to use sudo to run. Just type `blue_sonar` or `blue_hydra` and press enter.
