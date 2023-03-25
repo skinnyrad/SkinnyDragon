@@ -18,7 +18,7 @@ echo "Press ENTER to continue or Ctrl-C to exit:"
 read key
 
 sudo apt-get update
-sudo apt-get -y install bluez-tools openssh-server rpi-imager
+sudo apt-get -y install bluez-tools openssh-server rpi-imager libbluetooth-dev
 echo
 
 echo "**** Installing Blue Sonar ****"
@@ -26,10 +26,24 @@ cd ~
 git clone https://github.com/ZeroChaos-/blue_sonar
 echo
 
-echo "**** Creating Permanent aliases for Blue_Hydra & Blue Sonar ****"
+echo "**** Install Redfang ****"
+cd ~
+git clone https://gitlab.com/kalilinux/packages/redfang
+cd ~/redfang
+make
+echo
+
+echo "**** Install UAPfuzz ****"
+cd ~
+git clone https://github.com/skinnyrad/uapfuzz
+echo
+
+echo "**** Creating Permanent Aliases for Blue_Hydra, Blue Sonar, Red Fang, and Uapfuzz ****"
 cd ~
 echo "alias blue_hydra='sudo /opt/bluetooth/blue_hydra/bin/blue_hydra'" > .bash_aliases
 echo "alias blue_sonar='sudo ~/blue_sonar/blue_sonar'" >> .bash_aliases
+echo "alias fang='sudo ~/redfang/fang'" >> .bash_aliases
+echo "alias uapfuzz='~/uapfuzz/uapfuzz.sh'" >> .bash_aliases
 echo
 
 echo "**** Download HackRF and Mayhem Firmware ****"
