@@ -18,7 +18,7 @@ echo "Press ENTER to continue or Ctrl-C to exit:"
 read key
 
 sudo apt-get update
-sudo apt-get -y install bluez-tools openssh-server rpi-imager gedit libbluetooth-dev
+sudo apt-get -y install bluez-tools openssh-server rpi-imager libbluetooth-dev
 echo
 
 echo "**** Installing Blue Sonar ****"
