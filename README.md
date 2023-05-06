@@ -21,7 +21,6 @@ cd SkinnyDragon
 - Raspberry Pi Imager
 - [Red Fang](https://gitlab.com/kalilinux/packages/redfang)
 - [UAPfuzz](https://github.com/skinnyrad/uapfuzz)
-- gedit
 
 ## Aliases
 Blue Hydra and Blue Sonar have been aliased so that you do not need to use sudo to run. Just type `blue_sonar` or `blue_hydra` and press enter.
