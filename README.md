@@ -18,7 +18,6 @@ cd SkinnyDragon
 - bluez-tools
 - Mayhem Firmware for HackRF (Downloads folder)
 - Openssh Server
-- Raspberry Pi Imager
 - [Red Fang](https://gitlab.com/kalilinux/packages/redfang)
 - [UAPfuzz](https://github.com/skinnyrad/uapfuzz)
 
