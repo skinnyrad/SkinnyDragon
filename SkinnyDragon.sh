@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#Mayhem version has a v in front of version number
+MAYHEM_VER=v1.7.1
+HACKRF_VER=2023.01.1
+
 echo "  ____  _    _                                  "
 echo " / ___|| | _(_)_ __  _ __  _   _                "
 echo " \___ \| |/ / | '_ \| '_ \| | | |               "
@@ -47,9 +51,9 @@ echo "alias uapfuzz='~/uapfuzz/uapfuzz.sh'" >> .bash_aliases
 echo
 
 echo "**** Download HackRF and Mayhem Firmware ****"
-wget https://github.com/greatscottgadgets/hackrf/releases/download/v2023.01.1/hackrf-2023.01.1.zip -O ~/Downloads/hackrf-2023.01.1.zip
-wget https://github.com/eried/portapack-mayhem/releases/download/v1.6.0/mayhem_v1.6.0_FIRMWARE.zip -O ~/Downloads/mayhem_v1.6.0_FIRMWARE.zip
-wget https://github.com/eried/portapack-mayhem/releases/download/v1.6.0/mayhem_v1.6.0_COPY_TO_SDCARD.zip -O ~/Downloads/mayhem_v1.6.0_COPY_TO_SDCARD.zip
+wget https://github.com/greatscottgadgets/hackrf/releases/download/v$HACKRF_VER/hackrf-$HACKRF_VER.zip -O ~/Downloads/hackrf-$HACKRF_VER.zip
+wget https://github.com/eried/portapack-mayhem/releases/download/$MAYHEM_VER/mayhem_$MAYHEM_VER_FIRMWARE.zip -O ~/Downloads/mayhem_$MAYHEM_VER_FIRMWARE.zip
+wget https://github.com/eried/portapack-mayhem/releases/download/$MAYHEM_VER/mayhem_$MAYHEM_VER_COPY_TO_SDCARD.zip -O ~/Downloads/mayhem_$MAYHEM_VER_COPY_TO_SDCARD.zip
 
 echo
 echo "** PLEASE READ THIS NOTICE **"
