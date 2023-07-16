@@ -16,6 +16,7 @@ cd SkinnyDragon
 ## Software Installed
 - [Blue Sonar](https://github.com/ZeroChaos-/blue_sonar)
 - bluez-tools
+- HackRF Firmware (Downloads folder)
 - Mayhem Firmware for HackRF (Downloads folder)
 - Openssh Server
 - [Red Fang](https://gitlab.com/kalilinux/packages/redfang)
