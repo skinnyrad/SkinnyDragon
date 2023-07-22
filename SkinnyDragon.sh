@@ -52,8 +52,8 @@ echo
 
 echo "**** Download HackRF and Mayhem Firmware ****"
 wget https://github.com/greatscottgadgets/hackrf/releases/download/v$HACKRF_VER/hackrf-$HACKRF_VER.zip -O ~/Downloads/hackrf-$HACKRF_VER.zip
-wget https://github.com/eried/portapack-mayhem/releases/download/$MAYHEM_VER/mayhem_$MAYHEM_VER_FIRMWARE.zip -O ~/Downloads/mayhem_$MAYHEM_VER_FIRMWARE.zip
-wget https://github.com/eried/portapack-mayhem/releases/download/$MAYHEM_VER/mayhem_$MAYHEM_VER_COPY_TO_SDCARD.zip -O ~/Downloads/mayhem_$MAYHEM_VER_COPY_TO_SDCARD.zip
+wget https://github.com/eried/portapack-mayhem/releases/download/$MAYHEM_VER/mayhem_"$MAYHEM_VER"_FIRMWARE.zip -O ~/Downloads/mayhem_"$MAYHEM_VER"_FIRMWARE.zip
+wget https://github.com/eried/portapack-mayhem/releases/download/$MAYHEM_VER/mayhem_"$MAYHEM_VER"_COPY_TO_SDCARD.zip -O ~/Downloads/mayhem_"$MAYHEM_VER"_COPY_TO_SDCARD.zip
 
 echo
 echo "** PLEASE READ THIS NOTICE **"
