@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #Mayhem version has a v in front of version number
-MAYHEM_VER=v1.9.1
-HACKRF_VER=2023.01.1
+MAYHEM_VER=v2.0.1
+HACKRF_VER=2024.02.1
 
 echo "  ____  _    _                                  "
 echo " / ___|| | _(_)_ __  _ __  _   _                "
@@ -52,8 +52,9 @@ echo
 
 echo "**** Download HackRF and Mayhem Firmware ****"
 wget https://github.com/greatscottgadgets/hackrf/releases/download/v$HACKRF_VER/hackrf-$HACKRF_VER.zip -O ~/Downloads/hackrf-$HACKRF_VER.zip
-wget https://github.com/eried/portapack-mayhem/releases/download/$MAYHEM_VER/mayhem_"$MAYHEM_VER"_FIRMWARE.zip -O ~/Downloads/mayhem_"$MAYHEM_VER"_FIRMWARE.zip
-wget https://github.com/eried/portapack-mayhem/releases/download/$MAYHEM_VER/mayhem_"$MAYHEM_VER"_COPY_TO_SDCARD.zip -O ~/Downloads/mayhem_"$MAYHEM_VER"_COPY_TO_SDCARD.zip
+wget https://github.com/portapack-mayhem/mayhem-firmware/releases/download/$MAYHEM_VER/mayhem_"$MAYHEM_VER"_COPY_TO_SDCARD.zip -O ~/Downloads/mayhem_"$MAYHEM_VER"_COPY_TO_SDCARD.zip
+wget https://github.com/portapack-mayhem/mayhem-firmware/releases/download/$MAYHEM_VER/mayhem_"$MAYHEM_VER"_FIRMWARE.zip -O ~/Downloads/mayhem_"$MAYHEM_VER"_FIRMWARE.zip
+
 
 echo
 echo "** PLEASE READ THIS NOTICE **"
