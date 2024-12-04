@@ -42,12 +42,13 @@ cd ~
 git clone https://github.com/skinnyrad/uapfuzz
 echo
 
-echo "**** Creating Permanent Aliases for Blue_Hydra, Blue Sonar, Red Fang, and Uapfuzz ****"
+echo "**** Creating Permanent Aliases for Blue_Hydra, Blue Sonar, Red Fang, Uapfuzz, and restart for Network Manager ****"
 cd ~
 echo "alias blue_hydra='sudo /opt/bluetooth/blue_hydra/bin/blue_hydra'" > .bash_aliases
 echo "alias blue_sonar='sudo ~/blue_sonar/blue_sonar'" >> .bash_aliases
 echo "alias fang='sudo ~/redfang/fang'" >> .bash_aliases
 echo "alias uapfuzz='~/uapfuzz/uapfuzz.sh'" >> .bash_aliases
+echo "alias rewifi='sudo systemctl restart NetworkManager'" >> .bash_aliases
 echo
 
 echo "**** Download HackRF and Mayhem Firmware ****"
