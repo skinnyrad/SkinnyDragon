@@ -21,6 +21,7 @@ cd SkinnyDragon
 - Openssh Server
 - [Red Fang](https://gitlab.com/kalilinux/packages/redfang)
 - [UAPfuzz](https://github.com/skinnyrad/uapfuzz)
+- [UTS-Script-Shop](https://github.com/skinnyrad/UTS-Script-Shop)
 
 ## Aliases
 Blue Hydra, Blue Sonar, Red Fang have been aliased so that you do not need to use sudo to run. Just type the base command and press enter.
