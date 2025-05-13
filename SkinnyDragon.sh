@@ -54,9 +54,9 @@ echo "alias blue_sonar='sudo ~/blue_sonar/blue_sonar'" >> .bash_aliases
 echo "alias fang='sudo ~/redfang/fang'" >> .bash_aliases
 echo "alias uapfuzz='~/uapfuzz/uapfuzz.sh'" >> .bash_aliases
 echo "alias rewifi='sudo systemctl restart NetworkManager'" >> .bash_aliases
-echo "alias KismetParse='python3 ~/UTS-Script-Shop/Kismet/KismetParse.py'" >> bash_aliases
-echo "alias sort_and_format='~/UTS-Script-Shop/Ubertooth/sort_and_format.sh'" >> bash_aliases
-echo "alias add_targets='~/UTS-Script-Shop/Kismet/add_targets.sh'" >> bash_aliases
+echo "alias KismetParse='python3 ~/UTS-Script-Shop/Kismet/KismetParse.py'" >> .bash_aliases
+echo "alias sort_and_format='~/UTS-Script-Shop/Ubertooth/sort_and_format.sh'" >> .bash_aliases
+echo "alias add_targets='~/UTS-Script-Shop/Kismet/add_targets.sh'" >> .bash_aliases
 
 echo "**** Download HackRF and Mayhem Firmware ****"
 wget https://github.com/greatscottgadgets/hackrf/releases/download/v$HACKRF_VER/hackrf-$HACKRF_VER.zip -O ~/Downloads/hackrf-$HACKRF_VER.zip
