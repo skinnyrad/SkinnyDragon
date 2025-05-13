@@ -23,7 +23,17 @@ cd SkinnyDragon
 - [UAPfuzz](https://github.com/skinnyrad/uapfuzz)
 
 ## Aliases
-Blue Hydra and Blue Sonar have been aliased so that you do not need to use sudo to run. Just type `blue_sonar` or `blue_hydra` and press enter.
+Blue Hydra, Blue Sonar, Red Fang have been aliased so that you do not need to use sudo to run. Just type the base command and press enter.
+
+Full Alias List:
+- blue_hydra='sudo /opt/bluetooth/blue_hydra/bin/blue_hydra'
+- blue_sonar='sudo ~/blue_sonar/blue_sonar'
+- fang='sudo ~/redfang/fang'
+- uapfuzz='~/uapfuzz/uapfuzz.sh'
+- rewifi='sudo systemctl restart NetworkManager'
+- KismetParse='python3 ~/UTS-Script-Shop/Kismet/KismetParse.py'
+- sort_and_format='~/UTS-Script-Shop/Ubertooth/sort_and_format.sh'
+
 
 ## Password Prompt
 In order to use the openssh functionality, one must have a password. However, everytime the live version is rebooted, the password is erased. After running the installation script, a prompt will appear at each subsequent reboot to ask for a new password. The password given to the prompt will be kept until the computer is rebooted or shutdown. When asked for the current password, leave it blank and press ENTER. DragonOS does not have a password for the live user by default.
