@@ -42,9 +42,40 @@ cd ~
 git clone https://github.com/skinnyrad/uapfuzz
 echo
 
-echo "**** Install UTS-Script-Show****"
+echo "**** Install UTS-Script-Show ****"
 cd ~
 git clone https://github.com/skinnyrad/UTS-Script-Shop
+echo
+
+echo "**** Patching BlueHydra Gem (if needed) ****"
+cd ~
+GEM_INFO=$(gem list -d data_objects 2>/dev/null)
+
+if [[ -n "$GEM_INFO" ]]; then
+    VERSION=$(echo "$GEM_INFO" | awk '/data_objects \([0-9.]+\)/ {gsub(/[()]/, "", $2); print $2}')
+    INSTALL_DIR=$(echo "$GEM_INFO" | awk '/Installed at:/ {print $3}')
+    # Only proceed if version is less than or equal to 0.10.17
+    if [ "$(printf "%s\n0.10.17" "$VERSION" | sort -V | head -n1)" = "$VERSION" ]; then
+        echo "Patching data_objects version $VERSION..."
+        if cd "$INSTALL_DIR/gems/data_objects-$VERSION" 2>/dev/null; then
+            if sudo wget https://pentoo.org/~zero/data_objects-fixnum2integer.patch; then
+                if sudo patch -p1 < data_objects-fixnum2integer.patch; then
+                    echo "Patch applied successfully"
+                else
+                    echo "Error: Patch failed"
+                fi
+            else
+                echo "Error: Failed to download patch"
+            fi
+        else
+            echo "Error: Could not change to gem directory"
+        fi
+    else
+        echo "Info: data_objects version $VERSION does not require patching"
+    fi
+else
+    echo "Warning: data_objects gem not installed"
+fi
 echo
 
 echo "**** Creating Permanent Aliases for Blue_Hydra, Blue Sonar, Red Fang, Uapfuzz, and restart for Network Manager ****"
