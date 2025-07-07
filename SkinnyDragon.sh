@@ -86,7 +86,7 @@ echo "alias fang='sudo ~/redfang/fang'" >> .bash_aliases
 echo "alias uapfuzz='~/uapfuzz/uapfuzz.sh'" >> .bash_aliases
 echo "alias rewifi='sudo systemctl restart NetworkManager'" >> .bash_aliases
 echo "alias KismetParse='python3 ~/UTS-Script-Shop/Kismet/KismetParse.py'" >> .bash_aliases
-echo "alias sort_and_format='~/UTS-Script-Shop/Ubertooth/sort_and_format.sh'" >> .bash_aliases
+echo "alias ubersort='~/UTS-Script-Shop/Ubertooth/ubersort.sh'" >> .bash_aliases
 echo "alias add_targets='sudo ~/UTS-Script-Shop/Kismet/add_targets.sh'" >> .bash_aliases
 
 echo "**** Download HackRF and Mayhem Firmware ****"
@@ -110,10 +110,21 @@ cd ~
 mkdir myScripts
 cd myScripts
 echo '#!/bin/bash' > passwordchange.sh
-echo 'echo "*** Create a Password for This Session ***"' >> passwordchange.sh
-echo 'echo "At Current Password prompt, JUST PRESS ENTER."' >> passwordchange.sh
-echo 'echo' >> passwordchange.sh
-echo 'passwd' >> passwordchange.sh
+echo 'read -p "Do you want to create a password for this session (for use with SSH)? (yes/no): " answer' >> passwordchange.sh
+echo 'case "$answer" in'
+echo '  [Yy][Ee][Ss]|[Yy])'
+echo '    echo "*** Create a Password for This Session ***"' >> passwordchange.sh
+echo '    echo "At Current Password prompt, JUST PRESS ENTER."' >> passwordchange.sh
+echo '    echo' >> passwordchange.sh
+echo '    passwd' >> passwordchange.sh
+echo '    ;;' >> passwordchange.sh
+echo '  [Nn][Oo]|[Nn])' >> passwordchange.sh
+echo '    exit 1' >> passwordchange.sh
+echo '    ;;' >> passwordchange.sh
+echo '  *)' >> passwordchange.sh
+echo '    exit 1' >> passwordchange.sh
+echo '    ;;' >> passwordchange.sh
+echo 'esac' >> passwordchange.sh
 chmod 744 passwordchange.sh
 
 echo "**** Creating Password Prompt AutoLaunch at Login ****"
