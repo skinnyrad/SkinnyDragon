@@ -111,8 +111,8 @@ mkdir myScripts
 cd myScripts
 echo '#!/bin/bash' > passwordchange.sh
 echo 'read -p "Do you want to create a password for this session (for use with SSH)? (yes/no): " answer' >> passwordchange.sh
-echo 'case "$answer" in'
-echo '  [Yy][Ee][Ss]|[Yy])'
+echo 'case "$answer" in' >> passwordchange.sh
+echo '  [Yy][Ee][Ss]|[Yy])' >> passwordchange.sh
 echo '    echo "*** Create a Password for This Session ***"' >> passwordchange.sh
 echo '    echo "At Current Password prompt, JUST PRESS ENTER."' >> passwordchange.sh
 echo '    echo' >> passwordchange.sh
