@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Mayhem version has a v in front of version number
-MAYHEM_VER=v2.0.1
+MAYHEM_VER=v2.1.0
 HACKRF_VER=2024.02.1
 
 echo "  ____  _    _                                  "
