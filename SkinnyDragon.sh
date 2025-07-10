@@ -26,6 +26,7 @@ mv myScripts ~
 
 sudo apt-get update
 sudo apt-get -y install bluez-tools openssh-server libbluetooth-dev
+sudo apt-get upgrade
 echo
 
 echo "**** Installing Blue Sonar ****"
