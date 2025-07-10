@@ -104,28 +104,6 @@ echo
 echo "Press Enter to continue"
 read key
 
-echo "**** Creating Password Prompt Script ****"
-cd ~
-mkdir myScripts
-cd myScripts
-echo '#!/bin/bash' > passwordchange.sh
-echo 'read -p "Do you want to create a password for this session (for use with SSH)? (yes/no): " answer' >> passwordchange.sh
-echo 'case "$answer" in' >> passwordchange.sh
-echo '  [Yy][Ee][Ss]|[Yy])' >> passwordchange.sh
-echo '    echo "*** Create a Password for This Session ***"' >> passwordchange.sh
-echo '    echo "At Current Password prompt, JUST PRESS ENTER."' >> passwordchange.sh
-echo '    echo' >> passwordchange.sh
-echo '    passwd' >> passwordchange.sh
-echo '    ;;' >> passwordchange.sh
-echo '  [Nn][Oo]|[Nn])' >> passwordchange.sh
-echo '    exit 1' >> passwordchange.sh
-echo '    ;;' >> passwordchange.sh
-echo '  *)' >> passwordchange.sh
-echo '    exit 1' >> passwordchange.sh
-echo '    ;;' >> passwordchange.sh
-echo 'esac' >> passwordchange.sh
-chmod 744 passwordchange.sh
-
 echo "**** Creating Password Prompt AutoLaunch at Login ****"
 cd ~/.config/
 mkdir autostart
