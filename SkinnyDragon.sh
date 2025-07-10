@@ -21,8 +21,11 @@ echo "Press ENTER to continue or Ctrl-C to exit:"
 
 read key
 
+echo "**** Move Scripts into place and change permissions ****"
 cd ~/SkinnyDragon
 mv myScripts ~
+cd ~/myScripts/
+chmod +x passwordchange.sh
 
 sudo apt-get update
 sudo apt-get -y install bluez-tools openssh-server libbluetooth-dev
