@@ -26,7 +26,6 @@ mv myScripts ~
 
 sudo apt-get update
 sudo apt-get -y install bluez-tools openssh-server libbluetooth-dev
-sudo apt-get upgrade
 echo
 
 echo "**** Installing Blue Sonar ****"
@@ -56,6 +55,7 @@ echo "**** Install EchoBlue ****"
 cd ~
 git clone https://github.com/skinnyrad/echoblue
 cp ~/myScripts/echoblue.sh ~/echoblue/
+cd ~/echoblue/
 python3 -m venv venv
 source venv/bin/activate
 pip install bleak aiofiles
