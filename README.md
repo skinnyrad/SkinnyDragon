@@ -22,6 +22,7 @@ cd SkinnyDragon
 - [Red Fang](https://gitlab.com/kalilinux/packages/redfang)
 - [UAPfuzz](https://github.com/skinnyrad/uapfuzz)
 - [UTS-Script-Shop](https://github.com/skinnyrad/UTS-Script-Shop)
+- [EchoBlue](https://github.com/skinnyrad/echoblue)
 
 ## Aliases
 Blue Hydra, Blue Sonar, Red Fang have been aliased so that you do not need to use sudo to run. Just type the base command and press enter.
@@ -34,7 +35,7 @@ Full Alias List:
 - rewifi='sudo systemctl restart NetworkManager'
 - KismetParse='python3 ~/UTS-Script-Shop/Kismet/KismetParse.py'
 - ubersort='~/UTS-Script-Shop/Ubertooth/ubersort.sh'
-
+- echoblue='~/echoblue/echoblue.sh'
 
 ## Password Prompt
 In order to use the openssh functionality, one must have a password. However, everytime the live version is rebooted, the password is erased. After running the installation script, a prompt will appear at each subsequent reboot to ask for a new password. The password given to the prompt will be kept until the computer is rebooted or shutdown. When asked for the current password, leave it blank and press ENTER. DragonOS does not have a password for the live user by default.
