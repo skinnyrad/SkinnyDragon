@@ -51,7 +51,7 @@ echo
 echo "**** Install UTS-Script-Show ****"
 cd ~
 git clone https://github.com/skinnyrad/UTS-Script-Shop
-chmod 744 ~/UTS=Script-Shop/Ubertooth/ubersort.sh
+chmod 744 ~/UTS-Script-Shop/Ubertooth/ubersort.sh
 echo
 
 echo "**** Install EchoBlue ****"
