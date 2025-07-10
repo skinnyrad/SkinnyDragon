@@ -33,8 +33,7 @@ Full Alias List:
 - uapfuzz='~/uapfuzz/uapfuzz.sh'
 - rewifi='sudo systemctl restart NetworkManager'
 - KismetParse='python3 ~/UTS-Script-Shop/Kismet/KismetParse.py'
-- sort_and_format='~/UTS-Script-Shop/Ubertooth/sort_and_format.sh'
-- add_targets='~/UTS-Script-Shop/Kismet/add_targets.sh'
+- ubersort='~/UTS-Script-Shop/Ubertooth/ubersort.sh'
 
 
 ## Password Prompt
