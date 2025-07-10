@@ -56,6 +56,7 @@ cd ~
 git clone https://github.com/skinnyrad/echoblue
 cp ~/myScripts/echoblue.sh ~/echoblue/
 cd ~/echoblue/
+chmod +x echoblue.sh
 python3 -m venv venv
 source venv/bin/activate
 pip install bleak aiofiles
