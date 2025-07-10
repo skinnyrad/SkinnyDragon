@@ -45,6 +45,7 @@ echo
 echo "**** Install UTS-Script-Show ****"
 cd ~
 git clone https://github.com/skinnyrad/UTS-Script-Shop
+chmod 744 ~/UTS=Script-Shop/Ubertooth/ubersort.sh
 echo
 
 echo "**** Patching BlueHydra Gem (if needed) ****"
@@ -78,7 +79,7 @@ else
 fi
 echo
 
-echo "**** Creating Permanent Aliases for Blue_Hydra, Blue Sonar, Red Fang, Uapfuzz, and restart for Network Manager ****"
+echo "**** Creating Permanent Aliases for Blue_Hydra, Blue Sonar, Red Fang, Uapfuzz, restart for Network Manager, KismetParse, and Ubersort ****"
 cd ~
 echo "alias blue_hydra='sudo /opt/bluetooth/blue_hydra/bin/blue_hydra'" > .bash_aliases
 echo "alias blue_sonar='sudo ~/blue_sonar/blue_sonar'" >> .bash_aliases
@@ -87,13 +88,11 @@ echo "alias uapfuzz='~/uapfuzz/uapfuzz.sh'" >> .bash_aliases
 echo "alias rewifi='sudo systemctl restart NetworkManager'" >> .bash_aliases
 echo "alias KismetParse='python3 ~/UTS-Script-Shop/Kismet/KismetParse.py'" >> .bash_aliases
 echo "alias ubersort='~/UTS-Script-Shop/Ubertooth/ubersort.sh'" >> .bash_aliases
-echo "alias add_targets='sudo ~/UTS-Script-Shop/Kismet/add_targets.sh'" >> .bash_aliases
 
 echo "**** Download HackRF and Mayhem Firmware ****"
 wget https://github.com/greatscottgadgets/hackrf/releases/download/v$HACKRF_VER/hackrf-$HACKRF_VER.zip -O ~/Downloads/hackrf-$HACKRF_VER.zip
 wget https://github.com/portapack-mayhem/mayhem-firmware/releases/download/$MAYHEM_VER/mayhem_"$MAYHEM_VER"_COPY_TO_SDCARD.zip -O ~/Downloads/mayhem_"$MAYHEM_VER"_COPY_TO_SDCARD.zip
 wget https://github.com/portapack-mayhem/mayhem-firmware/releases/download/$MAYHEM_VER/mayhem_"$MAYHEM_VER"_FIRMWARE.zip -O ~/Downloads/mayhem_"$MAYHEM_VER"_FIRMWARE.zip
-
 
 echo
 echo "** PLEASE READ THIS NOTICE **"
