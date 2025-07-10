@@ -21,6 +21,9 @@ echo "Press ENTER to continue or Ctrl-C to exit:"
 
 read key
 
+cd ~/SkinnyDragon
+mv myScripts ~
+
 sudo apt-get update
 sudo apt-get -y install bluez-tools openssh-server libbluetooth-dev
 echo
@@ -47,6 +50,15 @@ cd ~
 git clone https://github.com/skinnyrad/UTS-Script-Shop
 chmod 744 ~/UTS=Script-Shop/Ubertooth/ubersort.sh
 echo
+
+echo "**** Install EchoBlue ****"
+cd ~
+git clone https://github.com/skinnyrad/echoblue
+cp ~/myScripts/echoblue.sh ~/echoblue/
+python3 -m venv venv
+source venv/bin/activate
+pip install bleak aiofiles
+deactivate
 
 echo "**** Patching BlueHydra Gem (if needed) ****"
 cd ~
@@ -88,6 +100,7 @@ echo "alias uapfuzz='~/uapfuzz/uapfuzz.sh'" >> .bash_aliases
 echo "alias rewifi='sudo systemctl restart NetworkManager'" >> .bash_aliases
 echo "alias KismetParse='python3 ~/UTS-Script-Shop/Kismet/KismetParse.py'" >> .bash_aliases
 echo "alias ubersort='~/UTS-Script-Shop/Ubertooth/ubersort.sh'" >> .bash_aliases
+echo "alias echoblue='~/echoblue/echoblue.sh'">> .bash_aliases
 
 echo "**** Download HackRF and Mayhem Firmware ****"
 wget https://github.com/greatscottgadgets/hackrf/releases/download/v$HACKRF_VER/hackrf-$HACKRF_VER.zip -O ~/Downloads/hackrf-$HACKRF_VER.zip
@@ -110,7 +123,7 @@ mkdir autostart
 cd autostart
 echo "[Desktop Entry]" > password.desktop
 echo "Type=Application" >> password.desktop
-echo "Exec=/home/live/myScripts/passwordchange.sh" >> password.desktop
+echo "Exec=~/myScripts/passwordchange.sh" >> password.desktop
 echo "Terminal=true" >> password.desktop
 echo "StartupNotify=true" >> password.desktop
 echo "Name=Password" >> password.desktop
