@@ -1,7 +1,7 @@
 # SkinnyDragon
 ![DragonWallpaper1080turq](https://user-images.githubusercontent.com/20311289/222309740-bc611523-16c6-4f3e-9b08-7aabdec38366.png)
 
-Skinny Dragon is a custom load for the DragonOS live version. 
+Skinny Dragon is a custom load for the DragonOS live version. It intended use is for the Live USB version of Dragon OS. It seems to work fine with the fully installed version as well, but this is rarely tested.
 
 ## Installation
 Be sure to download the latest version of [DragonOS](https://sourceforge.net/projects/dragonos-focal/) and burn the iso to a USB drive. I use [Rufus](https://rufus.ie/en/) because the live USB version needs to have a persistent partition. Rufus provides the ability to supply such a partition without much of a hassle. Give 75% to 90% of the allowed persistent space to the persistent partition. With this partition present you will be able to save many of your changes from session to session.
