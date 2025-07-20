@@ -65,6 +65,13 @@ source venv/bin/activate
 pip install bleak aiofiles
 deactivate
 
+echo "**** Patching HackRF Spectrum Analyzer launch icon****"
+echo "Change just launches terminal window."
+cd ~
+HRFSA_FILEPATH="/usr/share/applications/hackrf-spectrum-analyzer.desktop
+NEW_EXEC="Exec=qterminal -w /usr/src/hackrf-spectrum-analyzer/"
+sed -i "s|^Exec=.*|$NEW_EXEC|" "$HRFSA_FILEPATH"
+
 echo "**** Patching BlueHydra Gem (if needed) ****"
 cd ~
 GEM_INFO=$(gem list -d data_objects 2>/dev/null)
