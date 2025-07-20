@@ -70,7 +70,7 @@ echo "Change just launches terminal window."
 cd ~
 HRFSA_FILEPATH="/usr/share/applications/hackrf-spectrum-analyzer.desktop"
 NEW_EXEC="Exec=qterminal -w /usr/src/hackrf-spectrum-analyzer/"
-sed -i "s|^Exec=.*|$NEW_EXEC|" "$HRFSA_FILEPATH"
+sudo sed -i "s|^Exec=.*|$NEW_EXEC|" "$HRFSA_FILEPATH"
 
 echo "**** Patching BlueHydra Gem (if needed) ****"
 cd ~
