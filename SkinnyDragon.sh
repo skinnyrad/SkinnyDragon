@@ -130,20 +130,6 @@ case "${reply,,}" in
         ;;
 esac
 
-wget https://github.com/greatscottgadgets/hackrf/releases/download/v$HACKRF_VER/hackrf-$HACKRF_VER.zip -O ~/Downloads/hackrf-$HACKRF_VER.zip
-wget https://github.com/portapack-mayhem/mayhem-firmware/releases/download/$MAYHEM_VER/mayhem_"$MAYHEM_VER"_COPY_TO_SDCARD.zip -O ~/Downloads/mayhem_"$MAYHEM_VER"_COPY_TO_SDCARD.zip
-wget https://github.com/portapack-mayhem/mayhem-firmware/releases/download/$MAYHEM_VER/mayhem_"$MAYHEM_VER"_FIRMWARE.zip -O ~/Downloads/mayhem_"$MAYHEM_VER"_FIRMWARE.zip
-
-echo
-echo "** PLEASE READ THIS NOTICE **"
-echo "When DragonOS boots, you will be prompted to make a new user password."
-echo "If you choose to create a password, it always prompts for the Current Password."
-echo "When prompted for the Current Password, press ENTER because the password does not exist."
-echo "Any new password created will be erased each time DragonOS shuts down."
-echo
-echo "Press Enter to continue"
-read key
-
 echo "**** Creating Password Prompt AutoLaunch at Login ****"
 cd ~/.config/
 mkdir autostart
