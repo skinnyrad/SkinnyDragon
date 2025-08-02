@@ -113,8 +113,10 @@ echo "alias rewifi='sudo systemctl restart NetworkManager'" >> .bash_aliases
 echo "alias KismetParse='python3 ~/UTS-Script-Shop/Kismet/KismetParse.py'" >> .bash_aliases
 echo "alias ubersort='~/UTS-Script-Shop/Ubertooth/ubersort.sh'" >> .bash_aliases
 echo "alias echoblue='~/echoblue/echoblue.sh'">> .bash_aliases
+echo
 
 echo "**** Download HackRF and Mayhem Firmware ****"
+echo
 read -p "Do you want to download the MAYHEM and HackRF firmware? If you are in a NATIA class, the answer is No (n)! Select y or n: " reply
 case "${reply,,}" in
     y | yes )
@@ -129,6 +131,7 @@ case "${reply,,}" in
         echo "Invalid response. Exiting."
         ;;
 esac
+echo
 
 echo "**** Creating Password Prompt AutoLaunch at Login ****"
 cd ~/.config/
