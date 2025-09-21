@@ -24,6 +24,9 @@ cd SkinnyDragon
 - [UTS-Script-Shop](https://github.com/skinnyrad/UTS-Script-Shop)
 - [EchoBlue](https://github.com/skinnyrad/echoblue)
 
+## Patches
+A couple of small things are broken in the original Dragon OS: Blue Hydra and launching HackRF Spectrum Analyzer from the menu. The Skinny Dragon installation process installs a Gem patch for Blue_Hydra to operate and causes the HackRF Spectrum Analyzer menu item to take you to the program location in the terminal where the program can be run directly.
+
 ## Aliases
 Blue Hydra, Blue Sonar, Red Fang have been aliased so that you do not need to use sudo to run. Just type the base command and press enter.
 
