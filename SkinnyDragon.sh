@@ -184,8 +184,11 @@ Choose a number and press ENTER:  "
     esac
 
 pcmanfm-qt --set-wallpaper=/home/live/Pictures/DragonWallpaper1080$a.png --wallpaper-mode=center
-
 echo
+echo
+echo "Oh, really. I see. Contemplating your decision..."
+echo
+sleep 15
 echo "**** Erasing qterminal Config Files for Clean Reboot ****"
 echo
 rm -rf ~/.config/qterminal.org/
