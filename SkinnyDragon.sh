@@ -24,8 +24,6 @@ read key
 echo "**** Move Scripts into place and change permissions ****"
 cd ~/SkinnyDragon
 mv myScripts ~
-cd ~/myScripts/
-chmod +x passwordchange.sh
 
 sudo apt-get update
 sudo apt-get -y install bluez-tools openssh-server libbluetooth-dev
@@ -59,7 +57,6 @@ cd ~
 git clone https://github.com/skinnyrad/echoblue
 cp ~/myScripts/echoblue.sh ~/echoblue/
 cd ~/echoblue/
-chmod +x echoblue.sh
 python3 -m venv venv
 source venv/bin/activate
 pip install bleak aiofiles
@@ -133,18 +130,18 @@ case "${reply,,}" in
 esac
 echo
 
-echo "**** Creating Password Prompt AutoLaunch at Login ****"
+echo "**** Creating an autostart for the Startup Script ****"
 cd ~/.config/
 mkdir autostart
 cd autostart
-echo "[Desktop Entry]" > password.desktop
-echo "Type=Application" >> password.desktop
-echo "Exec=~/myScripts/passwordchange.sh" >> password.desktop
-echo "Terminal=true" >> password.desktop
-echo "StartupNotify=true" >> password.desktop
-echo "Name=Password" >> password.desktop
-echo "X-LQXt-Need-Tray=true">> password.desktop
-chmod 744 password.desktop
+echo "[Desktop Entry]" > startup.desktop
+echo "Type=Application" >> startup.desktop
+echo "Exec=~/myScripts/startup.sh" >> startup.desktop
+echo "Terminal=true" >> startup.desktop
+echo "StartupNotify=true" >> startup.desktop
+echo "Name=StartUp" >> startup.desktop
+echo "X-LQXt-Need-Tray=true">> startup.desktop
+chmod 744 startup.desktop
 
 echo
 echo "**** Desktop Download for Class Background ****"
