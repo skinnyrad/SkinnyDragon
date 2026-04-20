@@ -21,12 +21,30 @@ echo "Press ENTER to continue or Ctrl-C to exit:"
 
 read key
 
-echo "**** Move Scripts into place and change permissions ****"
+echo "**** Moving Scripts Into Place ****"
 cd ~/SkinnyDragon
 mv myScripts ~
 
-sudo apt-get update
-sudo apt-get -y install bluez-tools openssh-server libbluetooth-dev
+echo "*** Setting Apt Sources and Updating Kismet ***"
+sudo apt remove --purge kismet*
+
+# Backup original apt sources and replace with ubuntu noble sources
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+echo "deb http://archive.ubuntu.com/ubuntu/ noble main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ noble-updates main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu/ noble-security main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ noble-backports main restricted universe multiverse" | sudo tee /etc/apt/sources.list
+
+sudo apt clean
+sudo apt update
+sudo apt -y install bluez-tools openssh-server libbluetooth-dev
+
+# Install git release of kismet
+wget -O - https://www.kismetwireless.net/repos/kismet-release.gpg.key --quiet | gpg --dearmor | sudo tee /usr/share/keyrings/kismet-archive-keyring.gpg >/dev/null
+echo 'deb [signed-by=/usr/share/keyrings/kismet-archive-keyring.gpg] https://www.kismetwireless.net/repos/apt/git/noble noble main' | sudo tee /etc/apt/sources.list.d/kismet.list >/dev/null
+sudo apt update
+sudo apt install kismet
+
 echo
 
 echo "**** Installing Blue Sonar ****"
@@ -34,25 +52,25 @@ cd ~
 git clone https://github.com/ZeroChaos-/blue_sonar
 echo
 
-echo "**** Install Redfang ****"
+echo "**** Installing Redfang ****"
 cd ~
 git clone https://gitlab.com/kalilinux/packages/redfang
 cd ~/redfang
 make
 echo
 
-echo "**** Install UAPfuzz ****"
+echo "**** Installing UAPfuzz ****"
 cd ~
 git clone https://github.com/skinnyrad/uapfuzz
 echo
 
-echo "**** Install UTS-Script-Show ****"
+echo "**** Installing UTS-Script-Show ****"
 cd ~
 git clone https://github.com/skinnyrad/UTS-Script-Shop
 chmod 744 ~/UTS-Script-Shop/Ubertooth/ubersort.sh
 echo
 
-echo "**** Install EchoBlue ****"
+echo "**** Installing EchoBlue ****"
 cd ~
 git clone https://github.com/skinnyrad/echoblue
 cp ~/myScripts/echoblue.sh ~/echoblue/
@@ -69,37 +87,6 @@ HRFSA_FILEPATH="/usr/share/applications/hackrf-spectrum-analyzer.desktop"
 NEW_EXEC="Exec=qterminal -w /usr/src/hackrf-spectrum-analyzer/"
 sudo sed -i "s|^Exec=.*|$NEW_EXEC|" "$HRFSA_FILEPATH"
 
-echo "**** Patching BlueHydra Gem (if needed) ****"
-cd ~
-GEM_INFO=$(gem list -d data_objects 2>/dev/null)
-
-if [[ -n "$GEM_INFO" ]]; then
-    VERSION=$(echo "$GEM_INFO" | awk '/data_objects \([0-9.]+\)/ {gsub(/[()]/, "", $2); print $2}')
-    INSTALL_DIR=$(echo "$GEM_INFO" | awk '/Installed at:/ {print $3}')
-    # Only proceed if version is less than or equal to 0.10.17
-    if [ "$(printf "%s\n0.10.17" "$VERSION" | sort -V | head -n1)" = "$VERSION" ]; then
-        echo "Patching data_objects version $VERSION..."
-        if cd "$INSTALL_DIR/gems/data_objects-$VERSION" 2>/dev/null; then
-            if sudo wget https://pentoo.org/~zero/data_objects-fixnum2integer.patch; then
-                if sudo patch -p1 < data_objects-fixnum2integer.patch; then
-                    echo "Patch applied successfully"
-                else
-                    echo "Error: Patch failed"
-                fi
-            else
-                echo "Error: Failed to download patch"
-            fi
-        else
-            echo "Error: Could not change to gem directory"
-        fi
-    else
-        echo "Info: data_objects version $VERSION does not require patching"
-    fi
-else
-    echo "Warning: data_objects gem not installed"
-fi
-echo
-
 echo "**** Creating Permanent Aliases for Blue_Hydra, Blue Sonar, Red Fang, Uapfuzz, restart for Network Manager, KismetParse, and Ubersort ****"
 cd ~
 echo "alias blue_hydra='sudo /opt/bluetooth/blue_hydra/bin/blue_hydra'" > .bash_aliases
@@ -112,7 +99,7 @@ echo "alias ubersort='~/UTS-Script-Shop/Ubertooth/ubersort.sh'" >> .bash_aliases
 echo "alias echoblue='~/echoblue/echoblue.sh'">> .bash_aliases
 echo
 
-echo "**** Download HackRF and Mayhem Firmware ****"
+echo "**** Downloading HackRF and Mayhem Firmware ****"
 echo
 read -p "Do you want to download the MAYHEM and HackRF firmware? If yes, this could take awhile on a slow connection. Select y or n: " reply
 case "${reply,,}" in
@@ -144,7 +131,7 @@ echo "X-LQXt-Need-Tray=true">> startup.desktop
 chmod 744 startup.desktop
 
 echo
-echo "**** Desktop Download for Class Background ****"
+echo "**** Downloading Desktop for Class Background ****"
 echo
 wget https://skinnyrd.com/wp-content/uploads/2023/03/DragonWallpaper1080turq.png -P ~/Pictures/
 wget https://skinnyrd.com/wp-content/uploads/2023/03/DragonWallpaper1080red.png -P ~/Pictures/
