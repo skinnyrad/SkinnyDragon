@@ -105,8 +105,8 @@ read -p "Do you want to download the MAYHEM and HackRF firmware? If yes, this co
 case "${reply,,}" in
     y | yes )
         wget https://github.com/greatscottgadgets/hackrf/releases/download/v$HACKRF_VER/hackrf-$HACKRF_VER.zip -O ~/Downloads/hackrf-$HACKRF_VER.zip
-        wget https://github.com/portapack-mayhem/mayhem-firmware/releases/download/$MAYHEM_VER/mayhem_"$MAYHEM_VER"_COPY_TO_SDCARD.zip -O ~/Downloads/mayhem_"$MAYHEM_VER"_COPY_TO_SDCARD.zip
-        wget https://github.com/portapack-mayhem/mayhem-firmware/releases/download/$MAYHEM_VER/mayhem_"$MAYHEM_VER"_FIRMWARE.zip -O ~/Downloads/mayhem_"$MAYHEM_VER"_FIRMWARE.zip
+        wget https://github.com/portapack-mayhem/mayhem-firmware/releases/download/$MAYHEM_VER/COPY_TO_SDCARD_hackrf_mayhem_$MAYHEM_VER.zip -O ~/Downloads/COPY_TO_SDCARD_hackrf_mayhem_$MAYHEM_VER.zip
+        wget https://github.com/portapack-mayhem/mayhem-firmware/releases/download/$MAYHEM_VER/FIRMWARE_mayhem_"$MAYHEM_VER".zip -O ~/Downloads/FIRMWARE_mayhem_$MAYHEM_VER.zip
         ;;
     n | no )
         echo "Download canceled."
