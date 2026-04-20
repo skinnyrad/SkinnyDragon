@@ -26,7 +26,7 @@ cd ~/SkinnyDragon
 mv myScripts ~
 
 echo "*** Setting Apt Sources and Updating Kismet ***"
-sudo apt remove --purge kismet*
+sudo apt remove -y --purge kismet*
 
 # Backup original apt sources and replace with ubuntu noble sources
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
