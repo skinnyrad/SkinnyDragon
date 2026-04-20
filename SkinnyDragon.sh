@@ -43,7 +43,7 @@ sudo apt -y install bluez-tools openssh-server libbluetooth-dev
 wget -O - https://www.kismetwireless.net/repos/kismet-release.gpg.key --quiet | gpg --dearmor | sudo tee /usr/share/keyrings/kismet-archive-keyring.gpg >/dev/null
 echo 'deb [signed-by=/usr/share/keyrings/kismet-archive-keyring.gpg] https://www.kismetwireless.net/repos/apt/git/noble noble main' | sudo tee /etc/apt/sources.list.d/kismet.list >/dev/null
 sudo apt update
-sudo apt install kismet
+sudo apt install -y kismet
 
 echo
 
