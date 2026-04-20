@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #Mayhem version has a v in front of version number
-MAYHEM_VER=v2.2.0
-HACKRF_VER=2024.02.1
+MAYHEM_VER=v2.4.0
+HACKRF_VER=2026.01.3
 
 echo "  ____  _    _                                  "
 echo " / ___|| | _(_)_ __  _ __  _   _                "
@@ -114,7 +114,7 @@ echo
 
 echo "**** Download HackRF and Mayhem Firmware ****"
 echo
-read -p "Do you want to download the MAYHEM and HackRF firmware? If you are in a NATIA class, the answer is No (n)! Select y or n: " reply
+read -p "Do you want to download the MAYHEM and HackRF firmware? If yes, this could take awhile on a slow connection. Select y or n: " reply
 case "${reply,,}" in
     y | yes )
         wget https://github.com/greatscottgadgets/hackrf/releases/download/v$HACKRF_VER/hackrf-$HACKRF_VER.zip -O ~/Downloads/hackrf-$HACKRF_VER.zip
