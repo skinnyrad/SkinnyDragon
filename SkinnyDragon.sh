@@ -169,7 +169,7 @@ Choose a number and press ENTER:  "
         ;;
     esac
 
-pcmanfm-qt --set-wallpaper=/home/live/Pictures/DragonWallpaper1080$a.png --wallpaper-mode=center
+pcmanfm-qt --set-wallpaper=/home/live/Pictures/DragonWallpaper1080$a.png --wallpaper-mode=zoom
 echo
 echo
 echo "Oh, really. I see. Contemplating your decision..."
