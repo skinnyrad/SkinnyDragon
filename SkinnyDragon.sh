@@ -97,6 +97,14 @@ python3 -m venv venv
 source venv/bin/activate
 pip install bleak aiofiles
 deactivate
+echo
+
+echo "**** Installing TSCM Change Detection ****"
+cd ~/Downloads
+wget "https://github.com/skinnyrad/TSCM-Change-Detection/releases/download/v1.0.1/tscm-change-detection_v1.0.1_linux_amd64.tar.gz"
+sudo tar -C /usr/local/bin -xzf tscm-change-detection_v1.0.1_linux_amd64.tar.gz
+sudo chmod +x /usr/local/bin/tscm-change-detection || true
+echo
 
 echo "**** Patching HackRF Spectrum Analyzer launch icon****"
 echo "Change just launches terminal window."
