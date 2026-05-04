@@ -40,5 +40,7 @@ Full Alias List:
 - ubersort='~/UTS-Script-Shop/Ubertooth/ubersort.sh'
 - echoblue='~/echoblue/echoblue.sh'
 
-## Password Prompt
-In order to use the openssh functionality, one must have a password. However, everytime the live version is rebooted, the password is erased. After running the installation script, a prompt will appear at each subsequent reboot to ask for a new password. The password given to the prompt will be kept until the computer is rebooted or shutdown. When asked for the current password, leave it blank and press ENTER. DragonOS does not have a password for the live user by default.
+## Boot Prompts
+After Skinny Dragon boots, one will be met with a couple of questions. The first question regards your WiFi regulatory domain. The default in this live USB is 00. The 00 regulatory domain does not allow 6GHz WiFi. You must change the regulatory domain to your country of interest. For instance, US will open all major WiFi freqnency ranges, but will not allow channel 14 in the 2.4GHz band. For that channel you would need to change the domain to JP.
+
+The second query is in regards to ssh. In order to use the openssh functionality, one must have a password. However, everytime the live version is rebooted, the password is erased. After running the installation script, a prompt will appear at each subsequent reboot to ask for a new password. The password given to the prompt will be kept until the computer is rebooted or shutdown. When asked for the current password, leave it blank and press ENTER. DragonOS does not have a password for the live user by default.
