@@ -23,11 +23,12 @@ cd SkinnyDragon
 - [UAPfuzz](https://github.com/skinnyrad/uapfuzz)
 - [UTS-Script-Shop](https://github.com/skinnyrad/UTS-Script-Shop)
 - [EchoBlue](https://github.com/skinnyrad/echoblue)
+- [TSCM Change Detection Software](https://github.com/skinnyrad/TSCM-Change-Detection)
 
 ## Patches
 A couple of small things are broken in the original Dragon OS: Blue Hydra and launching HackRF Spectrum Analyzer from the menu. The Skinny Dragon installation process installs a Gem patch for Blue_Hydra to operate and causes the HackRF Spectrum Analyzer menu item to take you to the program location in the terminal where the program can be run directly.
 
-## Aliases
+## Aliases and Added Programs
 Blue Hydra, Blue Sonar, Red Fang have been aliased so that you do not need to use sudo to run. Just type the base command and press enter.
 
 Full Alias List:
@@ -39,6 +40,9 @@ Full Alias List:
 - KismetParse='python3 ~/UTS-Script-Shop/Kismet/KismetParse.py'
 - ubersort='~/UTS-Script-Shop/Ubertooth/ubersort.sh'
 - echoblue='~/echoblue/echoblue.sh'
+
+Added Program in bin:
+- tscm-change-detection
 
 ## Boot Prompts
 After Skinny Dragon boots, one will be met with a couple of questions. The first question regards your WiFi regulatory domain. The default in this live USB is 00. The 00 regulatory domain does not allow 6GHz WiFi. You must change the regulatory domain to your country of interest. For instance, US will open all major WiFi freqnency ranges, but will not allow channel 14 in the 2.4GHz band. For that channel you would need to change the domain to JP.
