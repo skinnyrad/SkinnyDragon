@@ -55,7 +55,7 @@ EOF
     sudo apt update
 fi
 
-sudo apt -y install bluez-tools openssh-server libbluetooth-dev
+sudo apt -y install bluez-tools openssh-server libbluetooth-dev build-essential cmake pkg-config libbtbb-dev libliquid-dev
 
 # Install git release of kismet
 wget -O - https://www.kismetwireless.net/repos/kismet-release.gpg.key --quiet | gpg --dearmor | sudo tee /usr/share/keyrings/kismet-archive-keyring.gpg >/dev/null
@@ -97,6 +97,14 @@ python3 -m venv venv
 source venv/bin/activate
 pip install bleak aiofiles
 deactivate
+echo
+
+echo "**** Installing Supertooth ****"
+cd ~
+git clone https://github.com/daltoncox/supertooth
+cd ~/supertooth/
+cmake -S . -B build
+cmake --build build
 echo
 
 echo "**** Installing TSCM Change Detection ****"
