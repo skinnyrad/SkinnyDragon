@@ -3,21 +3,20 @@
 # Check current regulatory domain
 current_reg=$(sudo iw reg get 2>/dev/null | awk '/country / {print $2; exit}' | cut -d':' -f1)
 
-echo "Current regulatory domain: ${current_reg:-unknown}"
+echo
+echo "Current WiFi regulatory domain: ${current_reg:-unknown}"
 
-echo -n "Enter 2-letter country code to set regulatory domain (or press Enter to skip): "
+echo -n "Enter 2-letter country code to set the WiFi regulatory domain (or press Enter to skip): "
 read -r new_dom
 
 # If user pressed Enter, do nothing
 if [ -z "$new_dom" ]; then
     echo "No input provided. Leaving domain as '${current_reg:-unknown}'."
-    exit 0
 fi
 
 # Basic validation: must be exactly 2 alphabetic characters
 if ! [[ "$new_dom" =~ ^[A-Za-z]{2}$ ]]; then
     echo "Invalid format (must be exactly 2 letters). Leaving domain as '${current_reg:-unknown}'."
-    exit 1
 fi
 
 # Normalize to uppercase
@@ -34,7 +33,6 @@ if sudo iw reg set "$new_dom"; then
     fi
 else
     echo "Failed to run 'iw reg set'. Leaving domain unchanged."
-    exit 1
 fi
 
 echo
