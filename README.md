@@ -24,9 +24,10 @@ cd SkinnyDragon
 - [UTS-Script-Shop](https://github.com/skinnyrad/UTS-Script-Shop)
 - [EchoBlue](https://github.com/skinnyrad/echoblue)
 - [TSCM Change Detection Software](https://github.com/skinnyrad/TSCM-Change-Detection)
+- [Supertooth](https://github.com/daltoncox/supertooth)
 
 ## Patches
-A couple of small things are broken in the original Dragon OS: Blue Hydra and launching HackRF Spectrum Analyzer from the menu. The Skinny Dragon installation process installs a Gem patch for Blue_Hydra to operate and causes the HackRF Spectrum Analyzer menu item to take you to the program location in the terminal where the program can be run directly.
+Launching HackRF Spectrum Analyzer from the menu causes issues in Dragon OS. This is patched by making the HackRF Spectrum Analyzer menu item to take you to the program location in the terminal where the program can be run directly.
 
 ## Aliases and Added Programs
 Blue Hydra, Blue Sonar, Red Fang have been aliased so that you do not need to use sudo to run. Just type the base command and press enter.
@@ -40,6 +41,9 @@ Full Alias List:
 - KismetParse='python3 ~/UTS-Script-Shop/Kismet/KismetParse.py'
 - ubersort='~/UTS-Script-Shop/Ubertooth/ubersort.sh'
 - echoblue='~/echoblue/echoblue.sh'
+- supertooth-ble='~/supertooth/build/src/supertooth-ble'
+- supertooth-rx='~/supertooth/build/src/supertooth-rx'
+- supertooth-hybrid='~/supertooth/build/src/supertooth-hybrid'
 
 Added Program in bin:
 - tscm-change-detection
