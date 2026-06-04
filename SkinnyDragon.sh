@@ -2,6 +2,7 @@
 
 #Mayhem version has a v in front of version number
 MAYHEM_VER=v2.4.0
+TSCMCD_VER=v1.1.0
 HACKRF_VER=2026.01.3
 
 echo "  ____  _    _                                  "
@@ -109,8 +110,8 @@ echo
 
 echo "**** Installing TSCM Change Detection ****"
 cd ~/Downloads
-wget "https://github.com/skinnyrad/TSCM-Change-Detection/releases/download/v1.0.1/tscm-change-detection_v1.0.1_linux_amd64.tar.gz"
-sudo tar -C /usr/local/bin -xzf tscm-change-detection_v1.0.1_linux_amd64.tar.gz
+wget "https://github.com/skinnyrad/TSCM-Change-Detection/releases/download/${TSCMCD_VER}/tscm-change-detection_${TSCMCD_VER}_linux_amd64.tar.gz"
+sudo tar -C /usr/local/bin -xzf tscm-change-detection_${TSCMCD_VER}_linux_amd64.tar.gz
 sudo chmod +x /usr/local/bin/tscm-change-detection || true
 echo
 
@@ -130,7 +131,10 @@ echo "alias uapfuzz='~/uapfuzz/uapfuzz.sh'" >> .bash_aliases
 echo "alias rewifi='sudo systemctl restart NetworkManager'" >> .bash_aliases
 echo "alias KismetParse='python3 ~/UTS-Script-Shop/Kismet/KismetParse.py'" >> .bash_aliases
 echo "alias ubersort='~/UTS-Script-Shop/Ubertooth/ubersort.sh'" >> .bash_aliases
-echo "alias echoblue='~/echoblue/echoblue.sh'">> .bash_aliases
+echo "alias echoblue='~/echoblue/echoblue.sh'" >> .bash_aliases
+echo "alias supertooth-ble='~/supertooth/build/src/supertooth-ble'" >> .bash_aliases
+echo "alias supertooth-rx='~/supertooth/build/src/supertooth-rx'" >> .bash_aliases
+echo "alias supertooth-hybrid='~/supertooth/build/src/supertooth-hybrid'" >> .bash_aliases
 echo
 
 echo "**** Downloading HackRF and Mayhem Firmware ****"
@@ -138,9 +142,9 @@ echo
 read -p "Do you want to download the MAYHEM and HackRF firmware? If yes, this could take awhile on a slow connection. Select y or n: " reply
 case "${reply,,}" in
     y | yes )
-        wget https://github.com/greatscottgadgets/hackrf/releases/download/v$HACKRF_VER/hackrf-$HACKRF_VER.zip -O ~/Downloads/hackrf-$HACKRF_VER.zip
-        wget https://github.com/portapack-mayhem/mayhem-firmware/releases/download/$MAYHEM_VER/COPY_TO_SDCARD_hackrf_mayhem_$MAYHEM_VER.zip -O ~/Downloads/COPY_TO_SDCARD_hackrf_mayhem_$MAYHEM_VER.zip
-        wget https://github.com/portapack-mayhem/mayhem-firmware/releases/download/$MAYHEM_VER/FIRMWARE_mayhem_"$MAYHEM_VER".zip -O ~/Downloads/FIRMWARE_mayhem_$MAYHEM_VER.zip
+        wget https://github.com/greatscottgadgets/hackrf/releases/download/v${HACKRF_VER}/hackrf-${HACKRF_VER}.zip -O ~/Downloads/hackrf-${HACKRF_VER}.zip
+        wget https://github.com/portapack-mayhem/mayhem-firmware/releases/download/${MAYHEM_VER}/COPY_TO_SDCARD_hackrf_mayhem_${MAYHEM_VER}.zip -O ~/Downloads/COPY_TO_SDCARD_hackrf_mayhem_${MAYHEM_VER}.zip
+        wget https://github.com/portapack-mayhem/mayhem-firmware/releases/download/${MAYHEM_VER}/FIRMWARE_mayhem_"${MAYHEM_VER}".zip -O ~/Downloads/FIRMWARE_mayhem_${MAYHEM_VER}.zip
         ;;
     n | no )
         echo "Download canceled."
