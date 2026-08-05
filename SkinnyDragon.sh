@@ -131,9 +131,6 @@ echo "alias rewifi='sudo systemctl restart NetworkManager'" >> .bash_aliases
 echo "alias KismetParse='python3 ~/UTS-Script-Shop/Kismet/KismetParse.py'" >> .bash_aliases
 echo "alias ubersort='~/UTS-Script-Shop/Ubertooth/ubersort.sh'" >> .bash_aliases
 echo "alias echoblue='~/echoblue/echoblue.sh'" >> .bash_aliases
-echo "alias supertooth-ble='~/supertooth/build/src/supertooth-ble'" >> .bash_aliases
-echo "alias supertooth-rx='~/supertooth/build/src/supertooth-rx'" >> .bash_aliases
-echo "alias supertooth-hybrid='~/supertooth/build/src/supertooth-hybrid'" >> .bash_aliases
 echo
 
 echo "**** Downloading HackRF and Mayhem Firmware ****"
