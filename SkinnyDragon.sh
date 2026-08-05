@@ -103,7 +103,7 @@ echo
 
 echo "**** Installing Supertooth ****"
 cd ~
-wget https://github.com/skinnyrad/supertooth/releases/download/${SUPERT_VER}/supertooth_${SUPERT_VER}_amd64.deb -O ~/Downloads/supertooth_${SUPERT_VER}_amd64.deb
+wget https://github.com/daltoncox/supertooth/releases/download/${SUPERT_VER}/supertooth_${SUPERT_VER}_amd64.deb -O ~/Downloads/supertooth_${SUPERT_VER}_amd64.deb
 sudo apt -y install ~/Downloads/supertooth_${SUPERT_VER}_amd64.deb
 echo
 
