@@ -4,6 +4,7 @@
 MAYHEM_VER=v2.4.0
 TSCMCD_VER=v1.1.0
 HACKRF_VER=2026.01.3
+SUPERT_VER=v0.1.1
 
 echo "  ____  _    _                                  "
 echo " / ___|| | _(_)_ __  _ __  _   _                "
@@ -102,10 +103,8 @@ echo
 
 echo "**** Installing Supertooth ****"
 cd ~
-git clone https://github.com/daltoncox/supertooth
-cd ~/supertooth/
-cmake -S . -B build
-cmake --build build
+wget https://github.com/skinnyrad/supertooth/releases/download/${SUPERT_VER}/supertooth_${SUPERT_VER}_amd64.deb -O ~/Downloads/supertooth_${SUPERT_VER}_amd64.deb
+sudo apt -y install ~/Downloads/supertooth_${SUPERT_VER}_amd64.deb
 echo
 
 echo "**** Installing TSCM Change Detection ****"
