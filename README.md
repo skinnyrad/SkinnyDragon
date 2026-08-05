@@ -41,12 +41,13 @@ Full Alias List:
 - KismetParse='python3 ~/UTS-Script-Shop/Kismet/KismetParse.py'
 - ubersort='~/UTS-Script-Shop/Ubertooth/ubersort.sh'
 - echoblue='~/echoblue/echoblue.sh'
-- supertooth-ble='~/supertooth/build/src/supertooth-ble'
-- supertooth-rx='~/supertooth/build/src/supertooth-rx'
-- supertooth-hybrid='~/supertooth/build/src/supertooth-hybrid'
 
 Added Program in bin:
 - tscm-change-detection
+- supertooth
+- supertooth-bredr
+- supertooth-ble
+- supertooth-hybrid
 
 ## Boot Prompts
 After Skinny Dragon boots, one will be met with a couple of questions. The first question regards your WiFi regulatory domain. The default in this live USB is 00. The 00 regulatory domain does not allow 6GHz WiFi. You must change the regulatory domain to your country of interest. For instance, US will open all major WiFi freqnency ranges, but will not allow channel 14 in the 2.4GHz band. For that channel you would need to change the domain to JP.
