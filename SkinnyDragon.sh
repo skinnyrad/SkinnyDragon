@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#Mayhem version has a v in front of version number
+#Version numbers for software
 MAYHEM_VER=v2.4.0
 TSCMCD_VER=v1.1.0
 HACKRF_VER=2026.01.3
-SUPERT_VER=v0.2.2
+SUPERT_VER=v0.2.4
 
 echo "  ____  _    _                                  "
 echo " / ___|| | _(_)_ __  _ __  _   _                "
