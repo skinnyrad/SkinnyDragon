@@ -53,7 +53,7 @@ EOF
     sudo apt update
 fi
 
-sudo apt -y install bluez-tools openssh-server libbluetooth-dev build-essential cmake pkg-config libbtbb-dev libliquid-dev
+sudo apt -y install bluez-tools openssh-server libbluetooth3 libbluetooth-dev build-essential cmake pkg-config libbtbb-dev libliquid-dev
 
 # Install git release of kismet
 wget -O - https://www.kismetwireless.net/repos/kismet-release.gpg.key --quiet | gpg --dearmor | sudo tee /usr/share/keyrings/kismet-archive-keyring.gpg >/dev/null
