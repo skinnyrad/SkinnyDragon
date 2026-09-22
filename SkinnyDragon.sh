@@ -4,7 +4,7 @@
 MAYHEM_VER=v2.4.0
 TSCMCD_VER=v1.1.0
 HACKRF_VER=2026.01.3
-SUPERT_VER=v0.2.4
+SUPERT_VER=v0.3.1
 
 echo "  ____  _    _                                  "
 echo " / ___|| | _(_)_ __  _ __  _   _                "
@@ -61,7 +61,7 @@ sudo apt -y install bluez-tools openssh-server libbluetooth-dev build-essential 
 
 # Install git release of kismet
 wget -O - https://www.kismetwireless.net/repos/kismet-release.gpg.key --quiet | gpg --dearmor | sudo tee /usr/share/keyrings/kismet-archive-keyring.gpg >/dev/null
-echo 'deb [signed-by=/usr/share/keyrings/kismet-archive-keyring.gpg] https://www.kismetwireless.net/repos/apt/git/noble noble main' | sudo tee /etc/apt/sources.list.d/kismet.list >/dev/null
+echo 'deb [signed-by=/usr/share/keyrings/kismet-archive-keyring.gpg] https://www.kismetwireless.net/repos/apt/git/resolute resolute main' | sudo tee /etc/apt/sources.list.d/kismet.list >/dev/null
 sudo apt update
 sudo apt install -y kismet
 
