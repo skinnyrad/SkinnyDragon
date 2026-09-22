@@ -26,9 +26,6 @@ echo "**** Moving Scripts Into Place ****"
 cd ~/SkinnyDragon
 mv myScripts ~
 
-echo "*** Setting Apt Sources and Updating Kismet ***"
-sudo apt remove -y --purge kismet*
-
 echo ">>> Testing existing apt configuration first..."
 # Try with whatever sources the system already has
 if sudo apt update; then
@@ -63,6 +60,7 @@ wget -O - https://www.kismetwireless.net/repos/kismet-release.gpg.key --quiet | 
 echo 'deb [signed-by=/usr/share/keyrings/kismet-archive-keyring.gpg] https://www.kismetwireless.net/repos/apt/git/resolute resolute main' | sudo tee /etc/apt/sources.list.d/kismet.list >/dev/null
 sudo apt update
 sudo apt install -y kismet
+sudo usermod -aG kismet $USER
 
 echo
 
