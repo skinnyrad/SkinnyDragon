@@ -61,6 +61,7 @@ echo 'deb [signed-by=/usr/share/keyrings/kismet-archive-keyring.gpg] https://www
 sudo apt update
 sudo apt install -y kismet
 sudo usermod -aG kismet $USER
+sudo usermod -aG dialout $USER
 
 echo
 
