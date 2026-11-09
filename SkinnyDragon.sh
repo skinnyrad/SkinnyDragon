@@ -4,6 +4,7 @@
 MAYHEM_VER=v2.4.0
 TSCMCD_VER=v1.2.0
 HACKRF_VER=2026.01.3
+ECHOBL_VER=v0.1.2
 
 echo "  ____  _    _                                  "
 echo " / ___|| | _(_)_ __  _ __  _   _                "
@@ -67,14 +68,9 @@ echo
 
 echo "**** Installing EchoBlue ****"
 cd ~
-git clone https://github.com/skinnyrad/echoblue
-cp ~/myScripts/echoblue.sh ~/echoblue/
-cd ~/echoblue/
-python3 -m venv venv
-source venv/bin/activate
-pip install bleak aiofiles
-deactivate
-echo
+wget "https://github.com/skinnyrad/echoblue/releases/download/${ECHOBL_VER}/echoblue-${ECHOBL_VER}-linux-amd64 -O ~/Downloads/echoblue
+mkdir ~/echoblue
+sudo cp ~/Downloads/echoblue ~/usr/local/bin/echoblue
 
 echo "**** Installing Supertooth ****"
 cd ~
@@ -106,7 +102,7 @@ echo "alias uapfuzz='~/uapfuzz/uapfuzz.sh'" >> .bash_aliases
 echo "alias rewifi='sudo systemctl restart NetworkManager'" >> .bash_aliases
 echo "alias KismetParse='python3 ~/UTS-Script-Shop/Kismet/KismetParse.py'" >> .bash_aliases
 echo "alias ubersort='~/UTS-Script-Shop/Ubertooth/ubersort.sh'" >> .bash_aliases
-echo "alias echoblue='~/echoblue/echoblue.sh'" >> .bash_aliases
+echo "alias echoblue='~/echoblue/echoblue'" >> .bash_aliases
 echo
 
 echo "**** Downloading HackRF and Mayhem Firmware ****"
