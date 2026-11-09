@@ -26,32 +26,32 @@ echo "**** Moving Scripts Into Place ****"
 cd ~/SkinnyDragon
 mv myScripts ~
 
-echo ">>> Testing existing apt configuration first..."
+# echo ">>> Testing existing apt configuration first..."
 # Try with whatever sources the system already has
-if sudo apt update; then
-    echo ">>> apt update succeeded with existing sources; not touching /etc/apt/sources.list"
-else
-    echo ">>> apt update failed; applying Dragon live-USB sources fix"
+# if sudo apt update; then
+#    echo ">>> apt update succeeded with existing sources; not touching /etc/apt/sources.list"
+#else
+#    echo ">>> apt update failed; applying Dragon live-USB sources fix"
 
-    # Make sure we can modify sources.list if it was previously immutable
-    sudo chattr -i /etc/apt/sources.list 2>/dev/null || true
+#    # Make sure we can modify sources.list if it was previously immutable
+#    sudo chattr -i /etc/apt/sources.list 2>/dev/null || true
 
-    # Backup original apt sources and replace with ubuntu noble sources
-    sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+#    # Backup original apt sources and replace with ubuntu noble sources
+#    sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 
-    cat <<'EOF' | sudo tee /etc/apt/sources.list >/dev/null
-deb http://archive.ubuntu.com/ubuntu/ noble main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ noble-updates main restricted universe multiverse
-deb http://security.ubuntu.com/ubuntu/ noble-security main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ noble-backports main restricted universe multiverse
-EOF
+#    cat <<'EOF' | sudo tee /etc/apt/sources.list >/dev/null
+#deb http://archive.ubuntu.com/ubuntu/ noble main restricted universe multiverse
+#deb http://archive.ubuntu.com/ubuntu/ noble-updates main restricted universe multiverse
+#deb http://security.ubuntu.com/ubuntu/ noble-security main restricted universe multiverse
+#deb http://archive.ubuntu.com/ubuntu/ noble-backports main restricted universe multiverse
+#EOF
 
-    # Make file immutable to prevent Dragon from writing the cdrom source
-    sudo chattr +i /etc/apt/sources.list
+#    # Make file immutable to prevent Dragon from writing the cdrom source
+#    sudo chattr +i /etc/apt/sources.list
 
-    sudo apt clean
-    sudo apt update
-fi
+#    sudo apt clean
+#    sudo apt update
+#fi
 
 sudo apt -y install bluez-tools openssh-server libbluetooth3 libbluetooth-dev build-essential cmake pkg-config libbtbb-dev libliquid-dev
 
