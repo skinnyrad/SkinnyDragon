@@ -177,11 +177,11 @@ Choose a number and press ENTER:  "
         ;;
     esac
 
-pcmanfm-qt --profile=lxqt --set-wallpaper="/home/live/Pictures/DragonWallpaper1080$a.png" --wallpaper-mode=stretch
+pcmanfm-qt --set-wallpaper="/home/live/Pictures/DragonWallpaper1080$a.png" --wallpaper-mode=stretch
 echo
 echo "Oh, really. I see. Contemplating your decision..."
 echo
-sleep 15
+sleep 20
 
 echo
 echo "**** A Reboot Will Occur in 10 Seconds ****"
