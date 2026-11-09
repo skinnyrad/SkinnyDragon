@@ -203,7 +203,7 @@ pcmanfm-qt --profile=lxqt --set-wallpaper="/home/live/Pictures/DragonWallpaper10
 echo
 echo "Oh, really. I see. Contemplating your decision..."
 echo
-sleep 10
+sleep 5
 
 echo
 echo "**** A Reboot Will Occur in 10 Seconds ****"
@@ -211,4 +211,4 @@ echo
 sleep 5
 echo "5 seconds remaining..."
 sleep 5
-reboot
+shutdown now
