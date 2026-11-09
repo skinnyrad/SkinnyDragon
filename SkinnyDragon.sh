@@ -2,7 +2,7 @@
 
 #Version numbers for software
 MAYHEM_VER=v2.4.0
-TSCMCD_VER=v1.1.0
+TSCMCD_VER=v1.2.0
 HACKRF_VER=2026.01.3
 
 echo "  ____  _    _                                  "
@@ -70,12 +70,12 @@ cd ~
 git clone https://github.com/ZeroChaos-/blue_sonar
 echo
 
-echo "**** Installing Redfang ****"
-cd ~
-git clone https://gitlab.com/kalilinux/packages/redfang
-cd ~/redfang
-make
-echo
+# echo "**** Installing Redfang ****"
+# cd ~
+# git clone https://gitlab.com/kalilinux/packages/redfang
+# cd ~/redfang
+# make
+# echo
 
 echo "**** Installing UAPfuzz ****"
 cd ~
@@ -199,15 +199,11 @@ Choose a number and press ENTER:  "
         ;;
     esac
 
-pcmanfm-qt --set-wallpaper=/home/live/Pictures/DragonWallpaper1080$a.png --wallpaper-mode=zoom
-echo
+pcmanfm-qt --profile=lxqt --set-wallpaper='/home/live/Pictures/DragonWallpaper1080$a.png' --wallpaper-mode=stretch
 echo
 echo "Oh, really. I see. Contemplating your decision..."
 echo
-sleep 15
-echo "**** Erasing qterminal Config Files for Clean Reboot ****"
-echo
-rm -rf ~/.config/qterminal.org/
+sleep 10
 
 echo
 echo "**** A Reboot Will Occur in 10 Seconds ****"
