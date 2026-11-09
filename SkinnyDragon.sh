@@ -199,7 +199,7 @@ Choose a number and press ENTER:  "
         ;;
     esac
 
-pcmanfm-qt --profile=lxqt --set-wallpaper='/home/live/Pictures/DragonWallpaper1080$a.png' --wallpaper-mode=stretch
+pcmanfm-qt --profile=lxqt --set-wallpaper="/home/live/Pictures/DragonWallpaper1080$a.png" --wallpaper-mode=stretch
 echo
 echo "Oh, really. I see. Contemplating your decision..."
 echo
