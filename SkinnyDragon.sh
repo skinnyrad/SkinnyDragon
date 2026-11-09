@@ -21,41 +21,18 @@ echo
 echo "Press ENTER to continue or Ctrl-C to exit:"
 
 read key
-
+echo
 echo "**** Moving Scripts Into Place ****"
 cd ~/SkinnyDragon
 mv myScripts ~
 
-# echo ">>> Testing existing apt configuration first..."
-# Try with whatever sources the system already has
-# if sudo apt update; then
-#    echo ">>> apt update succeeded with existing sources; not touching /etc/apt/sources.list"
-#else
-#    echo ">>> apt update failed; applying Dragon live-USB sources fix"
-
-#    # Make sure we can modify sources.list if it was previously immutable
-#    sudo chattr -i /etc/apt/sources.list 2>/dev/null || true
-
-#    # Backup original apt sources and replace with ubuntu noble sources
-#    sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
-
-#    cat <<'EOF' | sudo tee /etc/apt/sources.list >/dev/null
-#deb http://archive.ubuntu.com/ubuntu/ noble main restricted universe multiverse
-#deb http://archive.ubuntu.com/ubuntu/ noble-updates main restricted universe multiverse
-#deb http://security.ubuntu.com/ubuntu/ noble-security main restricted universe multiverse
-#deb http://archive.ubuntu.com/ubuntu/ noble-backports main restricted universe multiverse
-#EOF
-
-#    # Make file immutable to prevent Dragon from writing the cdrom source
-#    sudo chattr +i /etc/apt/sources.list
-
-#    sudo apt clean
-#    sudo apt update
-#fi
-
+echo
+echo "**** Installing Tools ****"
 sudo apt update
-sudo apt -y install bluez-tools openssh-server libbluetooth3 libbluetooth-dev build-essential cmake pkg-config libbtbb-dev libliquid-dev
+sudo apt -y install bluez-tools openssh-server libbluetooth3 libbluetooth-dev build-essential cmake pkg-config libbtbb-dev libliquid-dev python3.14-venv
 
+echo
+echo "**** Installing Kismet ****"
 # Install git release of kismet
 wget -O - https://www.kismetwireless.net/repos/kismet-release.gpg.key --quiet | gpg --dearmor | sudo tee /usr/share/keyrings/kismet-archive-keyring.gpg >/dev/null
 echo 'deb [signed-by=/usr/share/keyrings/kismet-archive-keyring.gpg] https://www.kismetwireless.net/repos/apt/git/resolute resolute main' | sudo tee /etc/apt/sources.list.d/kismet.list >/dev/null
@@ -65,18 +42,17 @@ sudo usermod -aG kismet $USER
 sudo usermod -aG dialout $USER
 
 echo
-
 echo "**** Installing Blue Sonar ****"
 cd ~
 git clone https://github.com/ZeroChaos-/blue_sonar
 echo
 
-# echo "**** Installing Redfang ****"
-# cd ~
-# git clone https://gitlab.com/kalilinux/packages/redfang
-# cd ~/redfang
-# make
-# echo
+echo "**** Installing Redfang ****"
+cd ~
+git clone https://gitlab.com/kalilinux/packages/redfang
+cd ~/redfang
+make
+echo
 
 echo "**** Installing UAPfuzz ****"
 cd ~
@@ -119,6 +95,7 @@ cd ~
 HRFSA_FILEPATH="/usr/share/applications/hackrf-spectrum-analyzer.desktop"
 NEW_EXEC="Exec=qterminal -w /usr/src/hackrf-spectrum-analyzer/"
 sudo sed -i "s|^Exec=.*|$NEW_EXEC|" "$HRFSA_FILEPATH"
+echo
 
 echo "**** Creating Permanent Aliases for Blue_Hydra, Blue Sonar, Red Fang, Uapfuzz, restart for Network Manager, KismetParse, and Ubersort ****"
 cd ~
@@ -204,12 +181,12 @@ pcmanfm-qt --profile=lxqt --set-wallpaper="/home/live/Pictures/DragonWallpaper10
 echo
 echo "Oh, really. I see. Contemplating your decision..."
 echo
-sleep 5
+sleep 15
 
 echo
 echo "**** A Reboot Will Occur in 10 Seconds ****"
 echo
-sleep 5
+sleep 10
 echo "5 seconds remaining..."
 sleep 5
 shutdown now
