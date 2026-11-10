@@ -48,12 +48,12 @@ cd ~
 git clone https://github.com/ZeroChaos-/blue_sonar
 echo
 
-echo "**** Installing Redfang ****"
-cd ~
-git clone https://gitlab.com/kalilinux/packages/redfang
-cd ~/redfang
-make
-echo
+# echo "**** Installing Redfang ****"
+# cd ~
+# git clone https://gitlab.com/kalilinux/packages/redfang
+# cd ~/redfang
+# make
+# echo
 
 echo "**** Installing UAPfuzz ****"
 cd ~
@@ -83,14 +83,6 @@ cd ~/Downloads
 wget "https://github.com/skinnyrad/TSCM-Change-Detection/releases/download/${TSCMCD_VER}/tscm-change-detection_${TSCMCD_VER}_linux_amd64.tar.gz"
 sudo tar -C /usr/local/bin -xzf tscm-change-detection_${TSCMCD_VER}_linux_amd64.tar.gz
 sudo chmod +x /usr/local/bin/tscm-change-detection || true
-echo
-
-echo "**** Patching HackRF Spectrum Analyzer launch icon****"
-echo "Change just launches terminal window."
-cd ~
-HRFSA_FILEPATH="/usr/share/applications/hackrf-spectrum-analyzer.desktop"
-NEW_EXEC="Exec=qterminal -w /usr/src/hackrf-spectrum-analyzer/"
-sudo sed -i "s|^Exec=.*|$NEW_EXEC|" "$HRFSA_FILEPATH"
 echo
 
 echo "**** Creating Permanent Aliases for Blue_Hydra, Blue Sonar, Red Fang, Uapfuzz, restart for Network Manager, KismetParse, and Ubersort ****"
